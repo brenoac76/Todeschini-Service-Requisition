@@ -1,1 +1,7 @@
-Not found
+{
+  "name": "Todeschini Service Requisition",
+  "description": "Mobile app to generate service requisitions (R-0013) with PDF export and history tracking.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

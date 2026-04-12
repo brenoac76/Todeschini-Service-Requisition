@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Plus, Trash2, Camera, Save, ArrowLeft, Download, Loader2, ExternalLink, Cloud, Image as ImageIcon, Activity, Lock, Ban, UserX, Check } from 'lucide-react';
+import { Plus, Trash2, Edit2, Camera, Save, ArrowLeft, Download, Loader2, ExternalLink, Cloud, Image as ImageIcon, Activity, Lock, Ban, UserX, Check } from 'lucide-react';
 import { Requisition, ServiceItem, DeliveryItem, PhotoAttachment, User, RequisitionStatus } from '../types';
 import { generateRequisitionPDF } from '../services/pdfGenerator';
 import { saveToGoogleSheets } from '../services/googleSheets';
@@ -26,6 +26,7 @@ const RequisitionForm: React.FC<RequisitionFormProps> = ({ onSave, onCancel, onD
   const [newService, setNewService] = useState<Partial<ServiceItem>>({
     quantity: 1, volume: undefined, specification: '', description: ''
   });
+  const [editingServiceId, setEditingServiceId] = useState<string | null>(null);
   const [newDelivery, setNewDelivery] = useState<Partial<DeliveryItem>>({
     quantity: 1, color: '', supplier: '', description: '', deliveryOk: 'Sim'
   });
@@ -111,16 +112,30 @@ const RequisitionForm: React.FC<RequisitionFormProps> = ({ onSave, onCancel, onD
       alert("Informe ao menos a descrição do serviço.");
       return;
     }
-    setFormData(prev => ({
-      ...prev,
-      services: [...prev.services, { 
-        id: generateId(), 
-        quantity: newService.quantity || 1, 
-        specification: newService.specification || '', 
-        description: newService.description || '', 
-        volume: newService.volume || 0 
-      }]
-    }));
+    if (editingServiceId) {
+      setFormData(prev => ({
+        ...prev,
+        services: prev.services.map(s => s.id === editingServiceId ? {
+          ...s,
+          quantity: newService.quantity || 1,
+          specification: newService.specification || '',
+          description: newService.description || '',
+          volume: newService.volume || 0
+        } : s)
+      }));
+      setEditingServiceId(null);
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        services: [...prev.services, { 
+          id: generateId(), 
+          quantity: newService.quantity || 1, 
+          specification: newService.specification || '', 
+          description: newService.description || '', 
+          volume: newService.volume || 0 
+        }]
+      }));
+    }
     // Reset inputs
     setNewService({ quantity: 1, volume: undefined, specification: '', description: '' });
   };
@@ -522,9 +537,22 @@ const RequisitionForm: React.FC<RequisitionFormProps> = ({ onSave, onCancel, onD
                     <p className="text-xs text-gray-500 leading-snug">{service.description}</p>
                   </div>
                   {!isStatusLocked && (
-                    <button type="button" onClick={() => removeServiceRow(service.id)} className="text-gray-300 hover:text-red-500 p-1">
-                      <Trash2 className="w-4 h-4" />
-                    </button>
+                    <div className="flex gap-1">
+                      <button type="button" onClick={() => {
+                        setEditingServiceId(service.id);
+                        setNewService({
+                          quantity: service.quantity,
+                          volume: service.volume,
+                          specification: service.specification,
+                          description: service.description
+                        });
+                      }} className="text-gray-300 hover:text-blue-500 p-1">
+                        <Edit2 className="w-4 h-4" />
+                      </button>
+                      <button type="button" onClick={() => removeServiceRow(service.id)} className="text-gray-300 hover:text-red-500 p-1">
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
                   )}
                 </div>
               ))}
@@ -580,7 +608,8 @@ const RequisitionForm: React.FC<RequisitionFormProps> = ({ onSave, onCancel, onD
                     onClick={handleAddService} 
                     className="w-full bg-brand-dark text-white p-2 rounded text-sm font-bold flex items-center justify-center gap-2 hover:bg-black transition"
                 >
-                    <Plus className="w-4 h-4" /> INCLUIR SERVIÇO
+                    {editingServiceId ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                    {editingServiceId ? 'ATUALIZAR SERVIÇO' : 'INCLUIR SERVIÇO'}
                 </button>
               </div>
             )}
