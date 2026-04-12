@@ -84,14 +84,31 @@ const RequisitionList: React.FC<RequisitionListProps> = ({ requisitions, onCreat
 
   // Calcula contagens para os filtros
   const counts = useMemo(() => {
+    const term = searchTerm.toLowerCase();
+    
+    const filteredBySearch = safeRequisitions.filter(r => {
+      if (!r) return false;
+      const client = r.clientName ? r.clientName.toLowerCase() : '';
+      const number = r.requisitionNumber ? r.requisitionNumber.toLowerCase() : '';
+      const date = r.date ? r.date.toString() : '';
+      const po = r.purchaseOrder ? r.purchaseOrder.toLowerCase() : '';
+      const fitter = r.fitter ? r.fitter.toLowerCase() : '';
+      
+      return client.includes(term) ||
+        number.includes(term) ||
+        date.includes(term) ||
+        po.includes(term) ||
+        fitter.includes(term);
+    });
+
     return {
-      Todas: safeRequisitions.length,
-      Recebida: safeRequisitions.filter(r => getNormalizedStatus(r.status) === 'Recebida').length,
-      'Em Progresso': safeRequisitions.filter(r => getNormalizedStatus(r.status) === 'Em Progresso').length,
-      Concluída: safeRequisitions.filter(r => getNormalizedStatus(r.status) === 'Concluída').length,
-      Cancelada: safeRequisitions.filter(r => getNormalizedStatus(r.status) === 'Cancelada').length,
+      Todas: filteredBySearch.length,
+      Recebida: filteredBySearch.filter(r => getNormalizedStatus(r.status) === 'Recebida').length,
+      'Em Progresso': filteredBySearch.filter(r => getNormalizedStatus(r.status) === 'Em Progresso').length,
+      Concluída: filteredBySearch.filter(r => getNormalizedStatus(r.status) === 'Concluída').length,
+      Cancelada: filteredBySearch.filter(r => getNormalizedStatus(r.status) === 'Cancelada').length,
     };
-  }, [safeRequisitions]);
+  }, [safeRequisitions, searchTerm]);
 
   const filtered = safeRequisitions.filter(r => {
     if (!r) return false;
@@ -102,11 +119,13 @@ const RequisitionList: React.FC<RequisitionListProps> = ({ requisitions, onCreat
     const number = r.requisitionNumber ? r.requisitionNumber.toLowerCase() : '';
     const date = r.date ? r.date.toString() : '';
     const po = r.purchaseOrder ? r.purchaseOrder.toLowerCase() : '';
+    const fitter = r.fitter ? r.fitter.toLowerCase() : '';
     
     const matchesSearch = client.includes(term) ||
       number.includes(term) ||
       date.includes(term) ||
-      po.includes(term);
+      po.includes(term) ||
+      fitter.includes(term);
 
     // Filtro de Status
     const normalizedStatus = getNormalizedStatus(r.status);
@@ -272,7 +291,7 @@ const RequisitionList: React.FC<RequisitionListProps> = ({ requisitions, onCreat
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
-                placeholder="Buscar por cliente, número ou OC..."
+                placeholder="Buscar por cliente, número, OC ou montador..."
                 className="w-full pl-10 pr-4 py-3 bg-gray-100 border-none rounded-lg focus:ring-2 focus:ring-brand-red focus:bg-white transition outline-none text-sm"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -389,7 +408,7 @@ const RequisitionList: React.FC<RequisitionListProps> = ({ requisitions, onCreat
 
                       <div className="flex items-center gap-1.5">
                         <User className="w-3.5 h-3.5 text-gray-400" />
-                        <span className="text-xs">{req.responsible || 'N/A'}</span>
+                        <span className="text-xs">{req.fitter || 'N/A'}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <Hash className="w-3.5 h-3.5 text-gray-400" />
