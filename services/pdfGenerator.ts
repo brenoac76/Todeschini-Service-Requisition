@@ -79,7 +79,7 @@ export const generateRequisitionPDF = async (originalData: Requisition) => {
 
   try {
      const logoWidth = 50; 
-     const logoHeight = 12; 
+     const logoHeight = 18; 
      doc.addImage(logoBase64, 'PNG', pageWidth - 14 - logoWidth, 6, logoWidth, logoHeight);
   } catch (e) {
     console.error("Erro ao adicionar logo", e);
@@ -141,22 +141,31 @@ export const generateRequisitionPDF = async (originalData: Requisition) => {
     s.volume
   ]);
 
-  if (serviceBody.length === 0) serviceBody.push(['', '', '', '']);
+  const totalQuantity = data.services.reduce((sum, s) => sum + (s.quantity || 0), 0);
+  const totalVolume = data.services.reduce((sum, s) => sum + (s.volume || 0), 0);
+  
+  serviceBody.push([totalQuantity, '', 'TOTAL', totalVolume]);
 
   autoTable(doc, {
     startY: currentY + 2,
-    head: [['Quantidade', 'Especificação', 'Descrição', 'Volume']],
+    head: [['Qtd', 'Especificação', 'Descrição', 'Volume']],
     body: serviceBody,
     theme: 'grid',
     headStyles: { fillColor: [220, 220, 220], textColor: 0, fontStyle: 'bold', lineColor: 0, lineWidth: 0.1 },
     styles: { lineColor: 0, lineWidth: 0.1, textColor: 0 },
     columnStyles: {
-      0: { cellWidth: 25 },
+      0: { cellWidth: 15 },
       1: { cellWidth: 40 },
       2: { cellWidth: 'auto' },
       3: { cellWidth: 25 }
     },
-    margin: { left: 14, right: 14 }
+    margin: { left: 14, right: 14 },
+    didParseCell: function(data) {
+        if (data.section === 'body' && data.row.index === serviceBody.length - 1) {
+            data.cell.styles.fontStyle = 'bold';
+            data.cell.styles.fillColor = [240, 240, 240];
+        }
+    }
   });
 
   // @ts-ignore
@@ -178,16 +187,30 @@ export const generateRequisitionPDF = async (originalData: Requisition) => {
     item.deliveryOk
   ]);
 
-  if (deliveryBody.length === 0) deliveryBody.push(['', '', '', '', '']);
+  const totalDeliveryQuantity = data.deliveryItems.reduce((sum, item) => sum + (item.quantity || 0), 0);
+  deliveryBody.push([totalDeliveryQuantity, 'TOTAL', '', '', '']);
 
   autoTable(doc, {
     startY: finalY + 2,
-    head: [['Quantidade', 'Descrição', 'Cor', 'Fornecedor', 'Entrega OK']],
+    head: [['Qtd', 'Descrição', 'Cor', 'Fornecedor', 'Entrega OK']],
     body: deliveryBody,
     theme: 'grid',
     headStyles: { fillColor: [220, 220, 220], textColor: 0, fontStyle: 'bold', lineColor: 0, lineWidth: 0.1 },
     styles: { lineColor: 0, lineWidth: 0.1, textColor: 0 },
-    margin: { left: 14, right: 14 }
+    columnStyles: {
+      0: { cellWidth: 15 },
+      1: { cellWidth: 'auto' },
+      2: { cellWidth: 30 },
+      3: { cellWidth: 30 },
+      4: { cellWidth: 20 }
+    },
+    margin: { left: 14, right: 14 },
+    didParseCell: function(data) {
+        if (data.section === 'body' && data.row.index === deliveryBody.length - 1) {
+            data.cell.styles.fontStyle = 'bold';
+            data.cell.styles.fillColor = [240, 240, 240];
+        }
+    }
   });
 
   // @ts-ignore
