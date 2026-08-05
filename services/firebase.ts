@@ -309,7 +309,7 @@ export const changePassword = async (username: string, newPassword: string, oldP
 
 export const getUsers = async (): Promise<User[]> => {
   try {
-    const querySnapshot = await withTimeout(getDocs(collection(db, USERS_COL)), 5000);
+    const querySnapshot = await withTimeout(getDocs(collection(db, USERS_COL)), 8000);
     const users: User[] = [];
     querySnapshot.forEach((docSnap) => {
       const data = docSnap.data();
@@ -319,28 +319,9 @@ export const getUsers = async (): Promise<User[]> => {
         role: data.role || 'montador'
       });
     });
-
-    if (users.length === 0 && !autoMigrationDone) {
-      autoMigrationDone = true;
-      const sheetsUsers = await getSheetsUsers();
-      if (sheetsUsers.length > 0) {
-        for (const u of sheetsUsers) {
-          if (u.username) {
-            setDoc(doc(db, USERS_COL, u.username.trim().toLowerCase()), {
-              username: u.username.trim().toLowerCase(),
-              password: u.password || '123456',
-              name: u.name || u.username,
-              role: u.role || 'montador'
-            }, { merge: true }).catch(() => {});
-          }
-        }
-        return sheetsUsers;
-      }
-    }
-
     return users;
   } catch (e: any) {
-    console.warn("Firebase getUsers fallback to Google Sheets:", e);
+    console.warn("Fallback ao carregar usuários do Firebase:", e);
     return await getSheetsUsers();
   }
 };
@@ -371,30 +352,15 @@ export const deleteFromDatabase = async (id: string): Promise<boolean> => {
 
 export const getRequisitions = async (): Promise<Requisition[]> => {
   try {
-    const querySnapshot = await withTimeout(getDocs(collection(db, REQS_COL)), 5000);
+    const querySnapshot = await withTimeout(getDocs(collection(db, REQS_COL)), 8000);
     const requisitions: Requisition[] = [];
     querySnapshot.forEach((docSnap) => {
       const data = docSnap.data() as Requisition;
       requisitions.push(data);
     });
-
-    if (requisitions.length === 0 && !autoMigrationDone) {
-      autoMigrationDone = true;
-      const sheetsReqs = await getSheetsRequisitions();
-      if (sheetsReqs.length > 0) {
-        for (const r of sheetsReqs) {
-          if (r.id) {
-            const cleanReq = JSON.parse(JSON.stringify(r));
-            setDoc(doc(db, REQS_COL, r.id), cleanReq, { merge: true }).catch(() => {});
-          }
-        }
-        return sheetsReqs;
-      }
-    }
-
     return requisitions;
   } catch (error) {
-    console.warn("Firebase getRequisitions fallback to Google Sheets:", error);
+    console.warn("Fallback ao carregar requisições do Firebase:", error);
     return await getSheetsRequisitions();
   }
 };

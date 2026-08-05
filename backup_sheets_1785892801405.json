@@ -1,0 +1,2943 @@
+{
+  "createdAt": "2026-08-05T01:20:01.405Z",
+  "source": "Google Sheets",
+  "usersCount": 14,
+  "requisitionsCount": 86,
+  "users": [
+    {
+      "username": "admin",
+      "name": "Administrador",
+      "role": "gestor"
+    },
+    {
+      "username": "Arthur",
+      "name": "Arthur ",
+      "role": "montador"
+    },
+    {
+      "username": "Rafael",
+      "name": "Rafael",
+      "role": "montador"
+    },
+    {
+      "username": "Breno",
+      "name": "Breno",
+      "role": "gestor"
+    },
+    {
+      "username": "Mateus",
+      "name": "Mateus",
+      "role": "montador"
+    },
+    {
+      "username": "Kelvin",
+      "name": "Kelvin",
+      "role": "montador"
+    },
+    {
+      "username": "almox",
+      "name": "Matheus - Almoxarifado",
+      "role": "operacional"
+    },
+    {
+      "username": "Carlos",
+      "name": "Carlos",
+      "role": "montador"
+    },
+    {
+      "username": "Natanael",
+      "name": "Natanael",
+      "role": "montador"
+    },
+    {
+      "username": "Eder",
+      "name": "Eder",
+      "role": "montador"
+    },
+    {
+      "username": "Henrique",
+      "name": "Henrique",
+      "role": "montador"
+    },
+    {
+      "username": "alexandre",
+      "name": "Alexandre",
+      "role": "operacional"
+    },
+    {
+      "username": "teste",
+      "name": "Teste",
+      "role": "montador"
+    },
+    {
+      "username": "Vinicius",
+      "name": "Vinícius",
+      "role": "operacional"
+    }
+  ],
+  "requisitions": [
+    {
+      "id": "i80gwgmt8",
+      "requisitionNumber": "R-1049",
+      "date": "2026-08-04T23:42:42.923Z",
+      "clientName": "Laninha/Israel",
+      "environment": "Closet",
+      "fitter": "Kelvin",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "4uazdgdx4",
+          "quantity": 1,
+          "specification": "820 x 115 x 18 ",
+          "description": "Cor Pecan - Toca acabada - Início do rebaixo para o fundo da gaveta 44 de baixo para cima (Frente Gaveta Closet Laninha)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1785886962923,
+      "createdBy": "Breno",
+      "status": "Recebida"
+    },
+    {
+      "id": "093a8j97c",
+      "requisitionNumber": "R-1048",
+      "date": "2026-08-04T11:16:35.829Z",
+      "clientName": "Israel/Laninha",
+      "environment": "Cozinha",
+      "fitter": "Kelvin",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "jec2rya8a",
+          "quantity": 2,
+          "specification": "328 x 150 x 18",
+          "description": "Cor Pecan - Acabamento em todos os lados (Parte dos rodapés das portas da área de serviço)",
+          "volume": 2
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1785842195829,
+      "createdBy": "Breno",
+      "status": "Recebida"
+    },
+    {
+      "id": "uuw8tyz85",
+      "requisitionNumber": "R-1047",
+      "date": "2026-07-30T14:17:56.825Z",
+      "clientName": "Elane",
+      "environment": "Suíte Master",
+      "fitter": "Carlos",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "5ku5uf64d",
+          "quantity": 1,
+          "specification": "2014 x 62 x 18",
+          "description": "Cor Pecan - Acabamento em todos os lados (Ripa latetal painel movie)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1785421076826,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "bpdguu29i",
+      "requisitionNumber": "R-1046",
+      "date": "2026-07-30T11:17:42.479Z",
+      "clientName": "Elane",
+      "environment": "Corredor",
+      "fitter": "Orlando",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "v1wim2vws",
+          "quantity": 1,
+          "specification": "806 x 2130 x 810 x 2130",
+          "description": "Cor Pecan - 806 na parte superior e 810 na inferior e 2130 nas laterais - não precisa de acabamento (Painel porta corredor)  18mm",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [
+        {
+          "id": "3b8bk7sgi",
+          "dataUrl": "",
+          "caption": "1000047884.jpg",
+          "url": "https://drive.google.com/uc?id=1axgmvKe03V60MKb9zNvVfv2GE6knnJ2g&export=download"
+        }
+      ],
+      "createdAt": 1785410262484,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "yrix7tvza",
+      "requisitionNumber": "R-1045",
+      "date": "2026-07-29T12:57:08.274Z",
+      "clientName": "Elane",
+      "environment": "Suíte Master",
+      "fitter": "Orlando",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "lqcdwf101",
+          "quantity": 1,
+          "specification": "2460 x 97 x 6",
+          "description": "Cor Pecan - Acabamemto em todos os lados (Acabamento marco da porta suíte master)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1785329828280,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "hxs35z844",
+      "requisitionNumber": "R-1044",
+      "date": "2026-07-28T17:44:17.719Z",
+      "clientName": "Elane",
+      "environment": "Closet",
+      "fitter": "Carlos",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "kxisg8mrp",
+          "quantity": 1,
+          "specification": "237 x 2460 x 18",
+          "description": "Cor pecan (Fechamento closet)",
+          "volume": 1
+        },
+        {
+          "id": "l5cwr3uyf",
+          "quantity": 1,
+          "specification": "237 x 425 x 18",
+          "description": "Cor Pecan (Fechamento Closet)",
+          "volume": 1
+        },
+        {
+          "id": "ymbqr78qy",
+          "quantity": 5,
+          "specification": "486 x 175 x 18",
+          "description": "Cor Pecan - Acabamento no lado maior (Prateleiras armário invisível)",
+          "volume": 5
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1785260657719,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "ot4noo8og",
+      "requisitionNumber": "R-1043",
+      "date": "2026-07-24T12:05:45.679Z",
+      "clientName": "Erik Kened",
+      "environment": "Closet suíte master",
+      "fitter": "Carlos",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "w39r29nbr",
+          "quantity": 1,
+          "specification": "931 x 540 x 18",
+          "description": "Cor Rocca - acabamento em todos os lados (Prateleira closet)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1784894745679,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "dzfqwzx69",
+      "requisitionNumber": "R-1042",
+      "date": "2026-07-21T10:58:26.677Z",
+      "clientName": "Daniela BH",
+      "environment": "Cozinha",
+      "fitter": "Rafael",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "fc2xhxehx",
+          "quantity": 1,
+          "specification": "918 x 450 x 18",
+          "description": "Cor Prisma - Acabamento em todos os lados  (Prateleira que vai abaixo da pia da cozinha)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1784631506677,
+      "createdBy": "Breno",
+      "status": "Recebida"
+    },
+    {
+      "id": "oymm8339c",
+      "requisitionNumber": "R-1041",
+      "date": "2026-07-20T20:05:42.476Z",
+      "clientName": "Erik Kened",
+      "environment": "Cozinha",
+      "fitter": "Carlos",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "p19btfpql",
+          "quantity": 1,
+          "specification": "795 x 180 x 18",
+          "description": "Cor Pecan - acabamento em todos os lados (Peças de sustentação da coifa)",
+          "volume": 1
+        },
+        {
+          "id": "jo1p8cbhm",
+          "quantity": 2,
+          "specification": "795 x 28 x 18",
+          "description": "Cor Pecan - acabamento em todos os lados (Peças de sustentação da coifa)",
+          "volume": 2
+        },
+        {
+          "id": "nyxgjnoz8",
+          "quantity": 2,
+          "specification": "174 x 28 x 18",
+          "description": "Cor Pecan - acabamento em todos os lados (Peças de sustentação da coifa)",
+          "volume": 2
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1784577942477,
+      "createdBy": "Breno",
+      "status": "Recebida"
+    },
+    {
+      "id": "30bwhbwwf",
+      "requisitionNumber": "R-1040",
+      "date": "2026-07-10T10:38:47.460Z",
+      "clientName": "Aline Medrado",
+      "environment": "Closet/Quarto suíte Master",
+      "fitter": "Carlos",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "56hc8btcv",
+          "quantity": 1,
+          "specification": "2050 x 638 x 18",
+          "description": "Cor Pecan - Acabamento em todos os lados (Tampo bancada closet)",
+          "volume": 1
+        },
+        {
+          "id": "6oif7g4r0",
+          "quantity": 1,
+          "specification": "875 x 291 x 15",
+          "description": "Cor Pecan - acabamento em todos os lados (Marco superior da porta)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1783679927460,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "7bx5q5ejp",
+      "requisitionNumber": "R-1039",
+      "date": "2026-06-30T11:57:50.526Z",
+      "clientName": "Darci",
+      "environment": "Corredor e Lavabo",
+      "fitter": "Kelvin",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "gyy9dnbqf",
+          "quantity": 1,
+          "specification": "60 x 60 x 18",
+          "description": "Cor Pecan - Todo acabado - (MADEIRA MACIÇA)",
+          "volume": 1
+        },
+        {
+          "id": "i69rimc0a",
+          "quantity": 1,
+          "specification": "45 x 60 x 18 ",
+          "description": "Cor Pecan - Todo acabado - (MADEIRA MACIÇA)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [
+        {
+          "id": "keouv967m",
+          "quantity": 1,
+          "description": "Rolo de 5 Metros de fita Pecan 100mm",
+          "color": "Pecan",
+          "supplier": "",
+          "deliveryOk": "Sim"
+        }
+      ],
+      "photos": [],
+      "createdAt": 1782820670526,
+      "createdBy": "Breno",
+      "status": "Recebida"
+    },
+    {
+      "id": "aywgyywpa",
+      "requisitionNumber": "R-1038",
+      "date": "2026-06-26T10:34:14.316Z",
+      "clientName": "Samuel Aurécio",
+      "environment": "Quarto Beatriz",
+      "fitter": "Carlos",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "51c903p7j",
+          "quantity": 1,
+          "specification": "1008 x 1021 x 18",
+          "description": "Cor Pecan - Todo acabado (SOMENTE AJUSTE A PEÇA JÁ ESTÁ FEITA - Painel Pecan Quarto Beatriz)",
+          "volume": 1
+        },
+        {
+          "id": "a9uzhltsw",
+          "quantity": 1,
+          "specification": "1018 x 251 x 18",
+          "description": "Cor Rocca - todo acabado (PAINEL QUARTO BEATRIZ)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1782470054316,
+      "createdBy": "Breno",
+      "status": "Recebida"
+    },
+    {
+      "id": "c5vv4zosd",
+      "requisitionNumber": "R-1037",
+      "date": "2026-06-25T01:42:22.502Z",
+      "clientName": "WE",
+      "environment": "Hall de entrada",
+      "fitter": "Arthur",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "iroekh35k",
+          "quantity": 1,
+          "specification": "2100 x 892 x 18",
+          "description": "Cor Prisma - todo acabado (Painel Corta Fogo)",
+          "volume": 1
+        },
+        {
+          "id": "z8cyt5ccz",
+          "quantity": 1,
+          "specification": "2106 x 829 x 18",
+          "description": "Cor Prisma -  todo acabado (Painel porta banheiro)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1782351742502,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateDone": "2026-06-30T12:17:43.002Z"
+    },
+    {
+      "id": "x8f26lt3l",
+      "requisitionNumber": "R-1036",
+      "date": "2026-06-23T13:14:30.009Z",
+      "clientName": "Elane",
+      "environment": "Closet Suíte Master",
+      "fitter": "Henrique",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "4n8zcb7fe",
+          "quantity": 1,
+          "specification": "964 x 120 x 9",
+          "description": "Cor Pecan - (Gaveta oculta) ",
+          "volume": 1
+        },
+        {
+          "id": "3obi1sais",
+          "quantity": 1,
+          "specification": "964 x 120 x 18",
+          "description": "Cor Pecan - (Gaveta Oculta) ",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [
+        {
+          "id": "118l8fkzm",
+          "dataUrl": "",
+          "caption": "1000039869.jpg",
+          "url": "https://drive.google.com/uc?id=1PD41nARxI3og7buZBPdlmx-pwRIiirLW&export=download"
+        }
+      ],
+      "createdAt": 1782220470009,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "69dzh9p0n",
+      "requisitionNumber": "R-1035",
+      "date": "2026-06-16T11:56:44.606Z",
+      "clientName": "Elane",
+      "environment": "Lavabo",
+      "fitter": "Henrique",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "azkqrseaq",
+          "quantity": 1,
+          "specification": "709 x 1985 x 18",
+          "description": "Cor Pecan - toda acabada (Painel porta lavabo)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1781611004606,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "1afod1i41",
+      "requisitionNumber": "R-1034",
+      "date": "2026-06-16T11:50:31.394Z",
+      "clientName": "Elane",
+      "environment": "Suíte 1",
+      "fitter": "Henrique",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "s2ji6a3ld",
+          "quantity": 1,
+          "specification": "716 x 1975 x 18 ",
+          "description": "Cor Pecan - todo acabado (Painel porta suíte 1)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1781610631394,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "q7nuz6bb2",
+      "requisitionNumber": "R-1033",
+      "date": "2026-06-15T19:12:48.308Z",
+      "clientName": "Elane",
+      "environment": "Cozinha",
+      "fitter": "Henrique",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "r2ysnocse",
+          "quantity": 1,
+          "specification": "540 x 363 x 18",
+          "description": "Cor pecan - acabada em um dos lados do 363 ( Prateleira armário cozinha)",
+          "volume": 1
+        },
+        {
+          "id": "losyry3m6",
+          "quantity": 1,
+          "specification": "2270 x 100 x 18",
+          "description": "Qualquer cor - 2270 pode ser cortado ao meio (Espera de rodapé área de serviço) ",
+          "volume": 1
+        },
+        {
+          "id": "qpa3jd6c4",
+          "quantity": 1,
+          "specification": "280 x 100 x 18 ",
+          "description": "Qualquer cor ( Espera de rodapé - área de serviço )",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1781550768308,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "fhst7w6x5",
+      "requisitionNumber": "R-1032",
+      "date": "2026-05-27T12:23:32.478Z",
+      "clientName": "Samuel Aurécio",
+      "environment": "Quarto Beatriz",
+      "fitter": "Carlos",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "vjg2j3x36",
+          "quantity": 1,
+          "specification": "1118 x 250 x 18",
+          "description": "Cor Rocca - Acabamento nos 4 lados, medidas acabadas (Painel quarto Beatriz)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1779884612478,
+      "createdBy": "admin",
+      "status": "Concluída",
+      "dateInProgress": "2026-06-30T12:18:10.534Z",
+      "dateDone": "2026-06-30T12:18:21.141Z"
+    },
+    {
+      "id": "p7i2cb72z",
+      "requisitionNumber": "R-1031",
+      "date": "2026-05-21T17:25:41.982Z",
+      "clientName": "Erik Kened",
+      "environment": "Sala",
+      "fitter": "Arthur",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "6cftws34x",
+          "quantity": 1,
+          "specification": "769 x 2130 x 18",
+          "description": "Cor Pecan todo acabado - Painel da porta",
+          "volume": 1
+        },
+        {
+          "id": "1ac0knqun",
+          "quantity": 1,
+          "specification": "740 x 870 x 18",
+          "description": "Cor Pecan todo acabado - Painel superior",
+          "volume": 1
+        },
+        {
+          "id": "z6lknna7p",
+          "quantity": 1,
+          "specification": "60 x 870 x 18",
+          "description": "Cor Pecan todo acabado - Painel superior",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1779384341982,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "q19urc5kg",
+      "requisitionNumber": "R-1030",
+      "date": "2026-05-19T17:16:46.662Z",
+      "clientName": "Alyne Ferreira",
+      "environment": "Cozinha",
+      "fitter": "Mateus",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "ap9lpbnrc",
+          "quantity": 1,
+          "specification": "50 x 770 x 6",
+          "description": "Pecan toda acabada",
+          "volume": 1
+        },
+        {
+          "id": "yn819e0w3",
+          "quantity": 1,
+          "specification": "2565 x 160 x 18",
+          "description": "Cor Pecan toda acabada",
+          "volume": 1
+        },
+        {
+          "id": "xc5is05wf",
+          "quantity": 1,
+          "specification": "60 x 92 x 25",
+          "description": "Cor Pecan toda acabada",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1779211006664,
+      "createdBy": "admin",
+      "status": "Concluída",
+      "dateDone": "2026-05-21T17:25:32.677Z"
+    },
+    {
+      "id": "6ugud1l21",
+      "requisitionNumber": "R-1029",
+      "date": "2026-04-28T19:31:07.313Z",
+      "clientName": "Helen/Samuel",
+      "environment": "Lavanderia",
+      "fitter": "Carlos",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "hujh52ba1",
+          "quantity": 1,
+          "specification": "895 x 728 x 18",
+          "description": "Cor Pecan - Toda acabada (VER FUROS DE SERRA COPO QUE DEVEM SER FEITOS CONFORME IMAGEM ABAIXO - TAMPA PAINEL DE AUTOMAÇÃO)",
+          "volume": 1
+        },
+        {
+          "id": "lmlsfjddw",
+          "quantity": 1,
+          "specification": "1238 X 494 X 18",
+          "description": "Cor Pecan - Toda acabada (PRATELEIRA ARMÁRIO LAVANDERIA)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [
+        {
+          "id": "zhc2lo9ft",
+          "dataUrl": "",
+          "caption": "WhatsApp Image 2026-04-28 at 16.35.27.jpeg",
+          "url": "https://drive.google.com/uc?id=1HAnSxIU2dG9KqTA347AHZHHwTk3kDW4k&export=download"
+        }
+      ],
+      "createdAt": 1777404667314,
+      "createdBy": "Breno",
+      "status": "Recebida"
+    },
+    {
+      "id": "plpi9c1v2",
+      "requisitionNumber": "R-1028",
+      "date": "2026-04-28T12:28:28.988Z",
+      "clientName": "Israel",
+      "environment": "Ver na descrição das peças",
+      "fitter": "Orlando",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "31odq4zs2",
+          "quantity": 1,
+          "specification": "700 x 410 x 6 ",
+          "description": "Cor Pecan - Fundo de gaveta Banheiro Suíte Master",
+          "volume": 1
+        },
+        {
+          "id": "cmthwt8lw",
+          "quantity": 1,
+          "specification": "1960 x 90 x 18 ",
+          "description": "Cor Garden - SENTIDO DO VEIO NO 1960mm (Alisar da porta do quarto Suíte Hóspede que fica em frente a cozinha)",
+          "volume": 1
+        },
+        {
+          "id": "xsixt62b1",
+          "quantity": 1,
+          "specification": "1395 x 78 x 18",
+          "description": "Cor Garden - SENTIDO DO VEIO 1395mm (Régua lateral do painel do Hall superior)",
+          "volume": 1
+        },
+        {
+          "id": "876tz0gra",
+          "quantity": 1,
+          "specification": "2097 x 811 x 18",
+          "description": "Cor Garden - SENTIDO DO VEIO 2097mm (Painel da porta do Hall superior)",
+          "volume": 1
+        },
+        {
+          "id": "xthimbhmm",
+          "quantity": 1,
+          "specification": "2095 x 707 x 18 ",
+          "description": "Cor Garden - SENTIDO DO VEIO 2095mm (Painel da porta do banheiro Hall superior)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1777379308988,
+      "createdBy": "Breno",
+      "status": "Recebida"
+    },
+    {
+      "id": "99uf1y1en",
+      "requisitionNumber": "R-1027",
+      "date": "2026-04-27T12:32:42.407Z",
+      "clientName": "Vera - GV",
+      "environment": "Sala de Jantar",
+      "fitter": "Carlos",
+      "purchaseOrder": "",
+      "responsible": "",
+      "services": [
+        {
+          "id": "9d8stk3dk",
+          "quantity": 1,
+          "specification": "640 x 850 x 18",
+          "description": "Cor Walnut - Todo fitado",
+          "volume": 1
+        },
+        {
+          "id": "6njajnewv",
+          "quantity": 1,
+          "specification": "850 x 710 x 18",
+          "description": "Cor Walnut - todo fitado",
+          "volume": 1
+        },
+        {
+          "id": "9ctx0gblm",
+          "quantity": 1,
+          "specification": "230 x 850 x 18",
+          "description": "Cor Walnut - todo fitado",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [
+        {
+          "id": "pygmwekei",
+          "dataUrl": "",
+          "caption": "WhatsApp Image 2026-04-28 at 09.17.51.jpeg",
+          "url": "https://drive.google.com/uc?id=16oPeJwJ5esA6XMGHdAZT3WCpRGyIkRCr&export=download"
+        }
+      ],
+      "createdAt": 1777293162407,
+      "createdBy": "Breno",
+      "status": "Recebida"
+    },
+    {
+      "id": "hf58xtz15",
+      "requisitionNumber": "R-1026",
+      "date": "2026-04-27T12:15:34.362Z",
+      "clientName": "Israel",
+      "environment": "Sala de Jantar (Coluna)",
+      "fitter": "Orlando",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "6jg1nxjkr",
+          "quantity": 1,
+          "specification": "2350 x 320 x 18 ",
+          "description": "Cor Garden - Toda fitada",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1777292134362,
+      "createdBy": "Breno",
+      "status": "Recebida"
+    },
+    {
+      "id": "qnsq4dnzu",
+      "requisitionNumber": "R-1025",
+      "date": "2026-04-16T13:11:28.954Z",
+      "clientName": "Helen",
+      "environment": "Suíte Master - Armário",
+      "fitter": "Carlos",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "3kv5qv6sc",
+          "quantity": 1,
+          "specification": "305 x 60 18 ",
+          "description": "Cor Pecan - toda acabada",
+          "volume": 1
+        },
+        {
+          "id": "91szoq7e2",
+          "quantity": 1,
+          "specification": "305 x 212 x 18",
+          "description": "Cor Pecan - Toda acabada",
+          "volume": 1
+        },
+        {
+          "id": "2oq0nf8xa",
+          "quantity": 1,
+          "specification": "230 x 60 x 18",
+          "description": "Cor Pecan - Toda acabada",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1776345088954,
+      "createdBy": "Breno",
+      "status": "Recebida"
+    },
+    {
+      "id": "xoei7b3yj",
+      "requisitionNumber": "R-1024",
+      "date": "2026-04-12T17:02:13.869Z",
+      "clientName": "Helen",
+      "environment": "Banho Suíte Bia",
+      "fitter": "Carlos",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "qqnq9zibo",
+          "quantity": 1,
+          "specification": "60 x 40 x 17 ",
+          "description": "Cor Roca - PEÇA MACIÇA - medidas acabadas, acabamento em todos os lados ",
+          "volume": 1
+        },
+        {
+          "id": "jrjg1afaz",
+          "quantity": 1,
+          "specification": "60 x 38 x 17",
+          "description": "Cor Roca - PEÇA MACIÇA - medidas acabadas, acabamento em todos os lados ",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1776013333869,
+      "createdBy": "Breno",
+      "status": "Cancelada",
+      "canceledBy": "Breno"
+    },
+    {
+      "id": "kz12tgrn2",
+      "requisitionNumber": "R-1023",
+      "date": "2026-04-12T14:18:04.308Z",
+      "clientName": "Helen",
+      "environment": "Banho Suíte Master",
+      "fitter": "Carlos",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "umabb611x",
+          "quantity": 2,
+          "specification": "2093 x 40 x 17",
+          "description": "Medidas acabadas - acabamento em todos os lados Pecan (Medidas em PEÇAS MACIÇAS)revestimento em fita de borda em todos os lados na cor pecan ",
+          "volume": 2
+        },
+        {
+          "id": "crl7p5l20",
+          "quantity": 1,
+          "specification": "813 x 110 x 18 ",
+          "description": "Pecan - ",
+          "volume": 1
+        },
+        {
+          "id": "r5bt8wgt1",
+          "quantity": 1,
+          "specification": "813 x 110 x 18",
+          "description": "Qualquer cor - ",
+          "volume": 1
+        },
+        {
+          "id": "6jrqhybak",
+          "quantity": 1,
+          "specification": "813 X 110 X 06",
+          "description": "Qualquer cor ",
+          "volume": 1
+        },
+        {
+          "id": "jjx8zn1uo",
+          "quantity": 1,
+          "specification": "",
+          "description": "Essas últimas três peças devem ser unidas se tornando uma só na espessura de 42 sendo que a peça na cor pecan ficará aparente ",
+          "volume": 0
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1776003484308,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "4efd8ph81",
+      "requisitionNumber": "R-1022",
+      "date": "2026-04-10T14:01:50.577Z",
+      "clientName": "Elane ",
+      "environment": "Suíte master",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "gbialfox2",
+          "quantity": 1,
+          "specification": "2462 x 100 x 18",
+          "description": "Cor Pecan - toda fitada (Moldura da porta)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1775829710577,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "aa21ue81w",
+      "requisitionNumber": "R-1021",
+      "date": "2026-04-10T13:54:20.162Z",
+      "clientName": "Elane",
+      "environment": "Lavanderia ",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "qs7pdoshf",
+          "quantity": 1,
+          "specification": "332 x 952 x 6",
+          "description": "Cor pecan - fundo de armário",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1775829260162,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "k7gpvr85s",
+      "requisitionNumber": "R-1020",
+      "date": "2026-04-10T13:50:53.119Z",
+      "clientName": "Elane ",
+      "environment": "Sala de Jantar",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "4y66wye3d",
+          "quantity": 2,
+          "specification": "350 x 90 x 18",
+          "description": "Qualquer cor - espera para rodapé",
+          "volume": 2
+        },
+        {
+          "id": "uhxfcktrs",
+          "quantity": 1,
+          "specification": "520 x 90 x 18",
+          "description": "Qualquer cor",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1775829053119,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "bxdoaw7wt",
+      "requisitionNumber": "R-1019",
+      "date": "2026-04-10T13:47:24.877Z",
+      "clientName": "Elane",
+      "environment": "Cozinha",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "3znm269aj",
+          "quantity": 2,
+          "specification": "1665 x 90 x 18",
+          "description": "Qualquer cor - espera para rodapé",
+          "volume": 2
+        },
+        {
+          "id": "7pcnss3q7",
+          "quantity": 3,
+          "specification": "510 x 90 x 18",
+          "description": "Qualquer cor",
+          "volume": 3
+        },
+        {
+          "id": "cs6b1w37j",
+          "quantity": 1,
+          "specification": "315 x 90 x 18",
+          "description": "Qualquer cor",
+          "volume": 1
+        },
+        {
+          "id": "ua99gordy",
+          "quantity": 2,
+          "specification": "1208 x 90 x 18",
+          "description": "Qualquer cor",
+          "volume": 2
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1775828844877,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "cwrsrfykc",
+      "requisitionNumber": "R-1018",
+      "date": "2026-04-10T13:44:52.481Z",
+      "clientName": "Elane",
+      "environment": "Área gourmet",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "1urssyadx",
+          "quantity": 1,
+          "specification": "1930 x 100 x 18",
+          "description": "Qualquer cor - espera para rodapé",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1775828692481,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "r9ngrmh1r",
+      "requisitionNumber": "R-1017",
+      "date": "2026-04-10T13:41:57.199Z",
+      "clientName": "Elane",
+      "environment": "Rouparia",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "ef09jh16c",
+          "quantity": 1,
+          "specification": "1130 x 100 x 18",
+          "description": "Qualquer cor - espera para rodapé",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1775828517199,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "pehx60i81",
+      "requisitionNumber": "R-1016",
+      "date": "2026-04-10T13:29:39.668Z",
+      "clientName": "Elane ",
+      "environment": "Lavanderia",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "n2nhn2avp",
+          "quantity": 1,
+          "specification": "300 x 249 x 18",
+          "description": "Cor Pecan - fitada em um dos lados do 249mm",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [
+        {
+          "id": "fe89n3gyw",
+          "quantity": 1,
+          "description": "Para fazer prateleira conforme a foto",
+          "color": "",
+          "supplier": "",
+          "deliveryOk": "Sim"
+        }
+      ],
+      "photos": [
+        {
+          "id": "gc8qcaqwc",
+          "dataUrl": "",
+          "caption": "1000026049.jpg",
+          "url": "https://drive.google.com/uc?id=1BNK9XACW1z8mItIZzM8mX-Pym6B3sQuv&export=download"
+        }
+      ],
+      "createdAt": 1775827779668,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "l5ae9blbp",
+      "requisitionNumber": "R-1015",
+      "date": "2026-04-10T13:24:33.984Z",
+      "clientName": "Elane ",
+      "environment": "Lavandeira ",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "i2vggxzj0",
+          "quantity": 2,
+          "specification": "1133 x 100 x 18",
+          "description": "Qualquer cor - espera para rodapé",
+          "volume": 2
+        },
+        {
+          "id": "1m3mzpslz",
+          "quantity": 1,
+          "specification": "290 x 100 x 18",
+          "description": "Qualquer cor - espera para rodapé",
+          "volume": 1
+        },
+        {
+          "id": "xu9xvee46",
+          "quantity": 1,
+          "specification": "965 x 100 x 18",
+          "description": "Qualquer cor",
+          "volume": 1
+        },
+        {
+          "id": "rg64jypri",
+          "quantity": 1,
+          "specification": "1940 x 100 x 18",
+          "description": "Qualquer cor",
+          "volume": 1
+        },
+        {
+          "id": "9atz2klod",
+          "quantity": 2,
+          "specification": "510 x 100 x 18",
+          "description": "Qualquer cor",
+          "volume": 2
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1775827473984,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "dzxcezmsx",
+      "requisitionNumber": "R-1014",
+      "date": "2026-04-02T17:26:47.131Z",
+      "clientName": "Elane",
+      "environment": "Área gourmet",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "nja9zsvvz",
+          "quantity": 1,
+          "specification": "1960 x 350 x 25",
+          "description": "Cor Pecan - fitar somente uma lateral de 1960mm",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1775150807138,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "425nl24zm",
+      "requisitionNumber": "R-1013",
+      "date": "2026-03-31T18:32:29.837Z",
+      "clientName": "Israel ",
+      "environment": "Closet Suíte Master",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "9hml8h2qg",
+          "quantity": 1,
+          "specification": "820 x 115 x 18 ",
+          "description": "Cor pecan - toda acabada",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1774981949837,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "8cbqkvf51",
+      "requisitionNumber": "R-1012",
+      "date": "2026-03-31T18:25:43.396Z",
+      "clientName": "Israel",
+      "environment": "Suíte Master",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [],
+      "deliveryItems": [
+        {
+          "id": "fkx7p7lut",
+          "quantity": 1,
+          "description": "Cor Garden - toda acabada",
+          "color": "1",
+          "supplier": "130 x 646 x 18",
+          "deliveryOk": "Sim"
+        }
+      ],
+      "photos": [],
+      "createdAt": 1774981543396,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "aaw2oh8v3",
+      "requisitionNumber": "R-1011",
+      "date": "2026-03-31T18:22:59.636Z",
+      "clientName": "Israel",
+      "environment": "Hall corredor",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "zos5cklmf",
+          "quantity": 1,
+          "specification": "2100 x 100 x 18 ",
+          "description": "Cor Pecan - toda acabada",
+          "volume": 1
+        },
+        {
+          "id": "9omx87o1g",
+          "quantity": 1,
+          "specification": "916 x 100 x 18",
+          "description": "Cor Pecan - toda acabada",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1774981379636,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "8y7nbzmkh",
+      "requisitionNumber": "R-1010",
+      "date": "2026-03-31T18:14:12.215Z",
+      "clientName": "Israel",
+      "environment": "Área gourmet",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "e3i1h8hqr",
+          "quantity": 1,
+          "specification": "380 x 500 x 25 ",
+          "description": "Cor Pecan - toda fitada",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1774980852215,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "oc5itd5f8",
+      "requisitionNumber": "R-1009",
+      "date": "2026-03-31T18:10:14.003Z",
+      "clientName": "Israel",
+      "environment": "Hall superior",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "wxftw4zsd",
+          "quantity": 1,
+          "specification": "871 x 1380 x 18 ",
+          "description": "Cor Garden - toda fitada",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1774980614010,
+      "createdBy": "admin",
+      "status": "Recebida"
+    },
+    {
+      "id": "v8yvzp1pn",
+      "requisitionNumber": "R-1008",
+      "date": "2026-03-18T16:51:30.252Z",
+      "clientName": "Helen ",
+      "environment": "Closet suíte Master ",
+      "fitter": "Carlos",
+      "purchaseOrder": "2300 / 2301",
+      "responsible": "Carlos",
+      "services": [
+        {
+          "id": "gjdu05x14",
+          "quantity": 1,
+          "specification": "540 X 374 X 18",
+          "description": "Prateleira na cor pecan,acabamento em 1 lado de 374",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1773852690255,
+      "createdBy": "Carlos",
+      "status": "Em Progresso",
+      "dateInProgress": "2026-03-19T13:00:58.183Z"
+    },
+    {
+      "id": "kbc7hwmjd",
+      "requisitionNumber": "R-1007",
+      "date": "2026-03-06T16:42:08.287Z",
+      "clientName": "Samuel - Helen",
+      "environment": "Suíte Master",
+      "fitter": "Carlos",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "0ulv4jr5n",
+          "quantity": 1,
+          "specification": "2678 x 25 x 18 mm",
+          "description": "1 ripado cor pecan totalmente acabado",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1772815328287,
+      "createdBy": "admin",
+      "status": "Concluída",
+      "dateInProgress": "2026-03-19T13:00:38.803Z",
+      "dateDone": "2026-04-27T12:25:31.205Z"
+    },
+    {
+      "id": "kdrlyne54",
+      "requisitionNumber": "R-1006",
+      "date": "2026-03-02T16:20:29.327Z",
+      "clientName": "Erik kened ",
+      "environment": "Quarto Mariana ",
+      "fitter": "Arthur ",
+      "purchaseOrder": "2446",
+      "responsible": "Arthur ",
+      "services": [
+        {
+          "id": "5fbgxcnxy",
+          "quantity": 1,
+          "specification": "120x540x18",
+          "description": "Cor pecan, colar fita nos 4 lados",
+          "volume": 1
+        },
+        {
+          "id": "5mlphbete",
+          "quantity": 1,
+          "specification": "220 x 220 x 18 mm",
+          "description": "Cor Pecan - Fitar os 4 lados  -- Rebaixar os 4 lados 12mm deixando o lado superior com 196mm e a parte inferior com 220mm e 3mm de espessura (essa peça será uma tampa)",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [
+        {
+          "id": "3yil6vp0w",
+          "dataUrl": "",
+          "caption": "IMG-20260304-WA0006.jpg",
+          "url": "https://drive.google.com/uc?id=1-Y8epipnqjiflFc6ueV8mT-aMj5jD5JV&export=download"
+        }
+      ],
+      "createdAt": 1772468429337,
+      "createdBy": "Arthur",
+      "status": "Concluída",
+      "dateInProgress": "2026-03-04T18:47:22.439Z",
+      "dateDone": "2026-07-20T20:20:13.241Z"
+    },
+    {
+      "id": "vf1ltd0a2",
+      "requisitionNumber": "R-1005",
+      "date": "2026-02-27T19:40:10.736Z",
+      "clientName": "Israel",
+      "environment": "Área Gourmet",
+      "fitter": "Equipe SP",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "6mm81mooq",
+          "quantity": 4,
+          "specification": "Somente passar a medida de 1200mm para 1196mm",
+          "description": "NÃO É PARA PRODUZIR - Somente ajuste",
+          "volume": 4
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1772221210736,
+      "createdBy": "admin",
+      "status": "Concluída",
+      "dateInProgress": "2026-03-04T18:47:14.231Z",
+      "dateDone": "2026-06-30T12:16:33.710Z"
+    },
+    {
+      "id": "b9zvt43x3",
+      "requisitionNumber": "R-1004",
+      "date": "2026-02-27T19:19:36.034Z",
+      "clientName": "Geraldo Sabino",
+      "environment": "Cozinha",
+      "fitter": "Natanael",
+      "purchaseOrder": "MJF 2519",
+      "responsible": "Alexandre",
+      "services": [
+        {
+          "id": "akztkawxz",
+          "quantity": 1,
+          "specification": "920 x 2100 x 5,5",
+          "description": "Cor Amber",
+          "volume": 0
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [
+        {
+          "id": "jl8ammimb",
+          "dataUrl": "",
+          "caption": "IMG_0183.jpeg",
+          "url": "https://drive.google.com/uc?id=1VAz9uHNO-CUj-kkcG7PFnY72dFpCxFso&export=download"
+        }
+      ],
+      "createdAt": 1772219976034,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateInProgress": "2026-03-04T18:47:37.553Z",
+      "dateDone": "2026-04-27T12:24:55.473Z"
+    },
+    {
+      "id": "minoi569w",
+      "requisitionNumber": "R-1003",
+      "date": "2026-02-25T19:12:51.822Z",
+      "clientName": "Israel (Laninha)",
+      "environment": "Cozinha",
+      "fitter": "Leonardo",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "b1lhceekv",
+          "quantity": 1,
+          "specification": "1268 x 1208  x 18",
+          "description": "Cor Garden - VEIOS NO SENTIDO 1268",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [
+        {
+          "id": "jwucmb4ln",
+          "dataUrl": "",
+          "caption": "WhatsApp Image 2026-02-25 at 16.11.52 (1).jpeg",
+          "url": "https://drive.google.com/uc?id=1Uk39205PmUqym7pRXNq37y6faL-yZKbi&export=download"
+        }
+      ],
+      "createdAt": 1772046771822,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateInProgress": "2026-02-25T19:51:45.794Z",
+      "dateDone": "2026-02-27T19:17:42.804Z"
+    },
+    {
+      "id": "fm0uie9vr",
+      "requisitionNumber": "R-1002",
+      "date": "2026-02-25T11:57:08.437Z",
+      "clientName": "ERIK KENNEDY",
+      "environment": "Closet quarto de hospede",
+      "fitter": "Eder",
+      "purchaseOrder": "",
+      "responsible": "Eder",
+      "services": [
+        {
+          "id": "70l50ek5v",
+          "quantity": 1,
+          "specification": "256.4 x5.5x 18",
+          "description": "Amber",
+          "volume": 0
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1772020628438,
+      "createdBy": "Eder",
+      "status": "Em Progresso",
+      "dateInProgress": "2026-02-25T17:14:16.133Z"
+    },
+    {
+      "id": "k57jyevin",
+      "requisitionNumber": "R-1001",
+      "date": "2026-02-23T16:37:41.026Z",
+      "clientName": "Erik kened",
+      "environment": "Quarto Mariana ",
+      "fitter": "Arthur ",
+      "purchaseOrder": "2446",
+      "responsible": "Arthur ",
+      "services": [
+        {
+          "id": "v8mbmz5iu",
+          "quantity": 6,
+          "specification": "2750x60",
+          "description": "Qualquer cor",
+          "volume": 6
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1771864661029,
+      "createdBy": "Arthur",
+      "status": "Em Progresso",
+      "dateInProgress": "2026-02-24T10:21:35.530Z",
+      "notificationEmails": []
+    },
+    {
+      "id": "o6hqembpl",
+      "requisitionNumber": "R-135",
+      "date": "2026-02-13T11:25:31.223Z",
+      "clientName": "Samuel/// Hellen ",
+      "environment": " Área de serviço ",
+      "fitter": "Eder",
+      "purchaseOrder": "",
+      "responsible": "Eder",
+      "services": [
+        {
+          "id": "9amc0wbp2",
+          "quantity": 4,
+          "specification": "2750x10x18",
+          "description": "Qualquer uma",
+          "volume": 0
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1770981931223,
+      "createdBy": "Eder",
+      "status": "Em Progresso",
+      "dateInProgress": "2026-02-17T10:53:45.923Z"
+    },
+    {
+      "id": "74bulxril",
+      "requisitionNumber": "R-134",
+      "date": "2026-02-09T20:21:46.406Z",
+      "clientName": "Elen",
+      "environment": "Sala",
+      "fitter": "Rafael",
+      "purchaseOrder": "",
+      "responsible": "Rafael",
+      "services": [
+        {
+          "id": "89kcawhnj",
+          "quantity": 1,
+          "specification": "705x470x18",
+          "description": "Peca para tampar o quebrado do fundo",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1770668506406,
+      "createdBy": "Rafael",
+      "status": "Em Progresso",
+      "dateInProgress": "2026-02-17T10:29:03.076Z"
+    },
+    {
+      "id": "wi26uc7bm",
+      "requisitionNumber": "R-134",
+      "date": "2026-02-09T19:31:49.187Z",
+      "clientName": "Elen",
+      "environment": "Sala",
+      "fitter": "Rafael",
+      "purchaseOrder": "",
+      "responsible": "Rafael",
+      "services": [
+        {
+          "id": "kqy9mlfku",
+          "quantity": 1,
+          "specification": "2500x18x18 ",
+          "description": "Galga pra ripado",
+          "volume": 1
+        },
+        {
+          "id": "chwss0wp0",
+          "quantity": 1,
+          "specification": "2500x17x18",
+          "description": "Galga pra ripado",
+          "volume": 1
+        },
+        {
+          "id": "a0u5ueway",
+          "quantity": 1,
+          "specification": "2500x16x18",
+          "description": "Galga para ripado",
+          "volume": 1
+        },
+        {
+          "id": "d5m0pnqfs",
+          "quantity": 1,
+          "specification": "2500x19x18",
+          "description": "Galga para ripado",
+          "volume": 1
+        },
+        {
+          "id": "ip5k91nwv",
+          "quantity": 1,
+          "specification": "705x430x18 pecan",
+          "description": "Peça para tampar um quebrado no fundo",
+          "volume": 1
+        },
+        {
+          "id": "pgiqxnhs7",
+          "quantity": 6,
+          "specification": "2700x60x18",
+          "description": "Reguas para iniciar outra montagem ",
+          "volume": 6
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1770665509188,
+      "createdBy": "Rafael",
+      "status": "Concluída",
+      "dateInProgress": "2026-02-09T19:43:07.493Z",
+      "dateDone": "2026-03-05T17:17:57.935Z"
+    },
+    {
+      "id": "8qnrybd3h",
+      "requisitionNumber": "R-133",
+      "date": "2026-02-09T19:34:37.274Z",
+      "clientName": "Samuel e Helen",
+      "environment": "Área de Serviço",
+      "fitter": "",
+      "purchaseOrder": "MJF2284",
+      "responsible": "",
+      "services": [
+        {
+          "id": "xt5k9klcx",
+          "quantity": 1,
+          "specification": "1830x835x18",
+          "description": "Fabricar painel",
+          "volume": 13
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1770665677274,
+      "createdBy": "alexandre",
+      "status": "Em Progresso",
+      "dateInProgress": "2026-02-09T19:43:15.868Z"
+    },
+    {
+      "id": "j7m6tpvco",
+      "requisitionNumber": "R-132",
+      "date": "2026-02-09T18:22:01.379Z",
+      "clientName": "Helen ",
+      "environment": "Quarto suíte Master ",
+      "fitter": "Carlos",
+      "purchaseOrder": "2284",
+      "responsible": "Carlos",
+      "services": [
+        {
+          "id": "mm7sc25z7",
+          "quantity": 1,
+          "specification": "2340 X 210 X 18",
+          "description": "Cor pecan acabamento todos os lados ",
+          "volume": 0
+        },
+        {
+          "id": "b7ogxpbtq",
+          "quantity": 1,
+          "specification": "636 X 210 X 18",
+          "description": "Cor pecan acabamento todos os lados ",
+          "volume": 0
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1770661321381,
+      "createdBy": "Carlos",
+      "status": "Cancelada",
+      "dateInProgress": "2026-02-09T18:47:18.912Z",
+      "canceledBy": "Carlos"
+    },
+    {
+      "id": "kfguu7n83",
+      "requisitionNumber": "R-131",
+      "date": "2026-02-04T16:55:51.124Z",
+      "clientName": "Helen ",
+      "environment": "Quarto suíte Master ",
+      "fitter": "Carlos",
+      "purchaseOrder": "2284",
+      "responsible": "Carlos",
+      "services": [
+        {
+          "id": "so09hv7xu",
+          "quantity": 2,
+          "specification": "1590 X 990 X 18",
+          "description": "Cor pecan ",
+          "volume": 0
+        },
+        {
+          "id": "jhykcmjja",
+          "quantity": 2,
+          "specification": "1540 X 990 X 18",
+          "description": "Cor pecan ",
+          "volume": 0
+        },
+        {
+          "id": "cyudyo4qv",
+          "quantity": 1,
+          "specification": "1590 X 1442 X 18",
+          "description": "Cor pecan ",
+          "volume": 0
+        },
+        {
+          "id": "q8obna9mu",
+          "quantity": 1,
+          "specification": "1540 X 1442 X 18",
+          "description": "Cor pecan ",
+          "volume": 0
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1770224151124,
+      "createdBy": "Carlos",
+      "status": "Cancelada",
+      "canceledBy": "Carlos"
+    },
+    {
+      "id": "1joz1xuy3",
+      "requisitionNumber": "R-130",
+      "date": "2026-02-03T18:30:17.843Z",
+      "clientName": "Juan",
+      "environment": "Sala",
+      "fitter": "Henrique",
+      "purchaseOrder": "",
+      "responsible": "Henrique",
+      "services": [
+        {
+          "id": "27qi81alj",
+          "quantity": 1,
+          "specification": "564 x 2400 x 18",
+          "description": "Cor Pecan",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1770143417843,
+      "createdBy": "admin",
+      "status": "Concluída",
+      "dateDone": "2026-02-09T10:56:22.404Z"
+    },
+    {
+      "id": "1hvroz945",
+      "requisitionNumber": "R-129",
+      "date": "2026-01-30T18:12:52.054Z",
+      "clientName": "Geraldo Sabino",
+      "environment": "Suíte Master",
+      "fitter": "Natanael",
+      "purchaseOrder": "",
+      "responsible": "Natanael",
+      "services": [
+        {
+          "id": "6yu04fufd",
+          "quantity": 1,
+          "specification": "254,4 x 35,5 x 18",
+          "description": "Cor Walnut",
+          "volume": 1
+        },
+        {
+          "id": "ori9n1xqp",
+          "quantity": 1,
+          "specification": "270 x 5 x 18",
+          "description": "Cor Walnut",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1769796772054,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateDone": "2026-02-09T10:56:00.518Z"
+    },
+    {
+      "id": "b1xru940x",
+      "requisitionNumber": "R-128",
+      "date": "2026-01-29T13:23:36.271Z",
+      "clientName": "Kênia ",
+      "environment": "Sala/Escritório ",
+      "fitter": "Arthur ",
+      "purchaseOrder": "2402",
+      "responsible": "Arthur ",
+      "services": [
+        {
+          "id": "j2pejdd7q",
+          "quantity": 5,
+          "specification": "2750x60x18",
+          "description": "Qualquer cor",
+          "volume": 0
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1769693016272,
+      "createdBy": "Arthur",
+      "status": "Concluída",
+      "dateInProgress": "2026-01-30T18:19:26.342Z",
+      "dateDone": "2026-03-05T17:17:43.070Z"
+    },
+    {
+      "id": "pgkcn11io",
+      "requisitionNumber": "R-127",
+      "date": "2026-01-28T20:41:33.720Z",
+      "clientName": "Samuel e Helen",
+      "environment": "Área de serviço",
+      "fitter": "Eder",
+      "purchaseOrder": "MJF 2334",
+      "responsible": "Eder",
+      "services": [
+        {
+          "id": "u4qudlgc3",
+          "quantity": 1,
+          "specification": "1782 x 822 x 5,5",
+          "description": "Cor Pecan",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1769632893720,
+      "createdBy": "admin",
+      "status": "Concluída",
+      "dateInProgress": "2026-01-30T18:19:13.905Z",
+      "dateDone": "2026-03-05T17:17:23.998Z"
+    },
+    {
+      "id": "azp2md17n",
+      "requisitionNumber": "R-126",
+      "date": "2026-01-27T18:23:54.136Z",
+      "clientName": "Juan",
+      "environment": "Sala e Suíte master",
+      "fitter": "Henrique",
+      "purchaseOrder": "",
+      "responsible": "Henrique",
+      "services": [
+        {
+          "id": "nhwt38kt7",
+          "quantity": 1,
+          "specification": "564 x 2040 x 18",
+          "description": "Cor pecan",
+          "volume": 1
+        },
+        {
+          "id": "p84phvq14",
+          "quantity": 1,
+          "specification": "1948 x 367 x 18",
+          "description": "Cor Canela ",
+          "volume": 1
+        },
+        {
+          "id": "zofs5jnpz",
+          "quantity": 1,
+          "specification": "885 x 60 x 18",
+          "description": "Cor Pecan",
+          "volume": 1
+        },
+        {
+          "id": "hvfm88t9q",
+          "quantity": 1,
+          "specification": "804 x 60 x 18",
+          "description": "Cor Pecan",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1769538234136,
+      "createdBy": "admin",
+      "status": "Concluída",
+      "dateDone": "2026-01-28T20:40:42.698Z"
+    },
+    {
+      "id": "ufszj6rcs",
+      "requisitionNumber": "R-125",
+      "date": "2026-01-27T17:28:31.390Z",
+      "clientName": "Marcos Mourão",
+      "environment": "Lavanderia",
+      "fitter": "Henrique",
+      "purchaseOrder": "",
+      "responsible": "Henrique",
+      "services": [
+        {
+          "id": "wlb5y0qx4",
+          "quantity": 1,
+          "specification": "605 x 400 x 18",
+          "description": "Medida do vão caixa de automação ",
+          "volume": 1
+        },
+        {
+          "id": "jdzrqn56j",
+          "quantity": 1,
+          "specification": "865 x 90 x 18",
+          "description": "Cor Amber - Prateleira do quarto filha",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1769534911402,
+      "createdBy": "admin",
+      "status": "Em Progresso",
+      "dateInProgress": "2026-03-05T17:16:45.690Z"
+    },
+    {
+      "id": "ip6qon2bd",
+      "requisitionNumber": "R-124",
+      "date": "2026-01-23T12:56:44.313Z",
+      "clientName": "Helen ",
+      "environment": "Closet casal",
+      "fitter": "Carlos",
+      "purchaseOrder": "2300 /2301 utilizar chapa pedida",
+      "responsible": "Carlos",
+      "services": [
+        {
+          "id": "or45hemqq",
+          "quantity": 3,
+          "specification": "2750 x 39 x 18",
+          "description": "Cor pecan ",
+          "volume": 0
+        },
+        {
+          "id": "2jbi8xez9",
+          "quantity": 1,
+          "specification": "2750 x 40 x 18",
+          "description": "Cor pecan ",
+          "volume": 0
+        },
+        {
+          "id": "n6k5kp8o3",
+          "quantity": 6,
+          "specification": "2750 x 60 x 18",
+          "description": "Qualquer cor peças pra engrosso painel do teto ",
+          "volume": 0
+        },
+        {
+          "id": "tarobvzjp",
+          "quantity": 4,
+          "specification": "2750 x 100 x 18",
+          "description": "Qualquer cor peças pra engrosso painel teto ripado ",
+          "volume": 0
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1769173004316,
+      "createdBy": "Carlos",
+      "status": "Concluída",
+      "dateDone": "2026-01-30T18:26:53.671Z"
+    },
+    {
+      "id": "e6v3zlh9y",
+      "requisitionNumber": "R-123",
+      "date": "2026-01-21T18:24:34.773Z",
+      "clientName": "Juan",
+      "environment": "Sala de estar",
+      "fitter": "Rafael",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "9o675fbhf",
+          "quantity": 1,
+          "specification": "2110 x 129 x 6",
+          "description": "Cor Canela",
+          "volume": 1
+        },
+        {
+          "id": "99n88xgo9",
+          "quantity": 1,
+          "specification": "2107 x 129 x 6",
+          "description": "Cor Canela",
+          "volume": 1
+        },
+        {
+          "id": "p7revrci5",
+          "quantity": 1,
+          "specification": "775 x 128 x 6",
+          "description": "Cor Canela",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1769019874773,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateInProgress": "2026-01-21T18:29:09.670Z",
+      "dateDone": "2026-01-23T15:30:19.400Z"
+    },
+    {
+      "id": "fx4sjkto4",
+      "requisitionNumber": "R-122",
+      "date": "2026-01-12T19:51:09.123Z",
+      "clientName": "Kênia ",
+      "environment": "Suite Master ",
+      "fitter": "Arthur ",
+      "purchaseOrder": "2369",
+      "responsible": "Arthur ",
+      "services": [
+        {
+          "id": "tr8w4rdwo",
+          "quantity": 1,
+          "specification": "1154x70x18",
+          "description": "Cor amber",
+          "volume": 0
+        },
+        {
+          "id": "yc9hj4ewk",
+          "quantity": 1,
+          "specification": "2126x125x18",
+          "description": "Cor Leblon (veio na horizontal) CORTAR NA CHAPA DA SALA",
+          "volume": 0
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1768247469126,
+      "createdBy": "Arthur",
+      "status": "Concluída",
+      "dateInProgress": "2026-01-13T10:44:37.422Z",
+      "dateDone": "2026-01-13T19:31:25.442Z"
+    },
+    {
+      "id": "rti1vq21p",
+      "requisitionNumber": "R-121",
+      "date": "2026-01-08T11:26:37.023Z",
+      "clientName": "Kênia de Souza Barbosa",
+      "environment": "Suíte Casal",
+      "fitter": "Arthur",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "0hpfnylvx",
+          "quantity": 4,
+          "specification": "2080 x 60 x 18",
+          "description": "Qualquer cor - FAZER FACÃO",
+          "volume": 4
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1767871597024,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateInProgress": "2026-01-08T11:29:05.360Z",
+      "dateDone": "2026-01-13T16:05:10.638Z"
+    },
+    {
+      "id": "l5lrjy3ei",
+      "requisitionNumber": "R-120",
+      "date": "2026-01-08T10:36:51.248Z",
+      "clientName": "Kênia de Souza Barbosa",
+      "environment": "Suíte Casal",
+      "fitter": "Arthur",
+      "purchaseOrder": "",
+      "responsible": "Breno",
+      "services": [
+        {
+          "id": "f7r2oj8ko",
+          "quantity": 4,
+          "specification": "2500 x 60 x 18",
+          "description": "Réguas qualquer cor",
+          "volume": 4
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1767868611249,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateInProgress": "2026-01-08T10:39:23.314Z",
+      "dateDone": "2026-01-08T19:57:49.387Z"
+    },
+    {
+      "id": "z4dwm6a5g",
+      "requisitionNumber": "R-119",
+      "date": "2025-12-17T10:38:19.050Z",
+      "clientName": "Juan",
+      "environment": "Suíte Master",
+      "fitter": "Kelvin",
+      "purchaseOrder": "",
+      "responsible": "Kelvin",
+      "services": [
+        {
+          "id": "s3uj7j2aq",
+          "quantity": 1,
+          "specification": "456 x 897 x 6",
+          "description": "Cor Pecan - Chapa de 6mm",
+          "volume": 0
+        },
+        {
+          "id": "hpnrc6s7i",
+          "quantity": 1,
+          "specification": "1925 x 67 x 18",
+          "description": "Cor Pecan - Fechamento",
+          "volume": 0
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1765967899050,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateInProgress": "2025-12-23T18:35:07.586Z",
+      "dateDone": "2025-12-23T18:35:48.434Z"
+    },
+    {
+      "id": "x8fp2ja3r",
+      "requisitionNumber": "R-118",
+      "date": "2025-12-15T12:15:15.750Z",
+      "clientName": "Andreia Rocha 703",
+      "environment": "Cozinha",
+      "fitter": "Arthur",
+      "purchaseOrder": "",
+      "responsible": "Arthur",
+      "services": [
+        {
+          "id": "gvflftup9",
+          "quantity": 1,
+          "specification": "630 x 170 x 18",
+          "description": "Qualquer cor",
+          "volume": 0
+        },
+        {
+          "id": "dp9rt3c0m",
+          "quantity": 1,
+          "specification": "490 x 170 x 18",
+          "description": "Qualquer cor",
+          "volume": 0
+        },
+        {
+          "id": "ekquomq1p",
+          "quantity": 1,
+          "specification": "595 x 170 x 18",
+          "description": "Qualquer cor",
+          "volume": 0
+        },
+        {
+          "id": "ypxeqfize",
+          "quantity": 1,
+          "specification": "310 x 170 x 18",
+          "description": "Qualquer cor ",
+          "volume": 0
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1765800915750,
+      "createdBy": "admin",
+      "status": "Concluída",
+      "dateDone": "2025-12-17T10:33:45.061Z"
+    },
+    {
+      "id": "qtc70fd4g",
+      "requisitionNumber": "R-117",
+      "date": "2025-12-15T12:12:32.344Z",
+      "clientName": "Andreia Rocha 702 ",
+      "environment": "Cozinha",
+      "fitter": "Arthur",
+      "purchaseOrder": "",
+      "responsible": "Arthur",
+      "services": [
+        {
+          "id": "bpb437lhv",
+          "quantity": 1,
+          "specification": "2140 x 160 x 18",
+          "description": "Qualquer cor",
+          "volume": 0
+        },
+        {
+          "id": "2wyrkjn9g",
+          "quantity": 3,
+          "specification": "500 x 160 x 18",
+          "description": "Qualquer cor",
+          "volume": 0
+        },
+        {
+          "id": "gor1hlhda",
+          "quantity": 1,
+          "specification": "520 x 160 x 18",
+          "description": "Qualquer cor",
+          "volume": 0
+        },
+        {
+          "id": "y03xf2cbp",
+          "quantity": 1,
+          "specification": "505 x 160 x 18",
+          "description": "Qualquer cor",
+          "volume": 0
+        },
+        {
+          "id": "6b0sd1hxz",
+          "quantity": 1,
+          "specification": "300 x 160 x 18 ",
+          "description": "Qualquer cor",
+          "volume": 0
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1765800752344,
+      "createdBy": "admin",
+      "status": "Concluída",
+      "dateDone": "2025-12-17T10:33:54.919Z"
+    },
+    {
+      "id": "ngfbzo26y",
+      "requisitionNumber": "R-116",
+      "date": "2025-12-15T12:09:10.987Z",
+      "clientName": "Andreia Rocha 701",
+      "environment": "Cozinha",
+      "fitter": "Arthur",
+      "purchaseOrder": "",
+      "responsible": "Arthur",
+      "services": [
+        {
+          "id": "lws74f8y7",
+          "quantity": 1,
+          "specification": "2060 x 170 x 18",
+          "description": "Qualquer cor",
+          "volume": 0
+        },
+        {
+          "id": "j1gt2zhbl",
+          "quantity": 3,
+          "specification": "485 x 170 x 18",
+          "description": "Qulaquer cor",
+          "volume": 0
+        },
+        {
+          "id": "w8dp3kegh",
+          "quantity": 1,
+          "specification": "550 x 170 x 18",
+          "description": "Qualquer cor",
+          "volume": 0
+        },
+        {
+          "id": "29kfwvnua",
+          "quantity": 1,
+          "specification": "510 x 170 x 18",
+          "description": "Qualquer cor",
+          "volume": 0
+        },
+        {
+          "id": "n8rce3zmp",
+          "quantity": 1,
+          "specification": "310 x 170  x 18",
+          "description": "Qualquer cor",
+          "volume": 0
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1765800550987,
+      "createdBy": "admin",
+      "status": "Concluída",
+      "dateDone": "2025-12-17T10:34:09.760Z"
+    },
+    {
+      "id": "kfp3zw9pm",
+      "requisitionNumber": "R-115",
+      "date": "2025-12-10T16:01:41.156Z",
+      "clientName": "Helen  absoluto Gv",
+      "environment": "",
+      "fitter": "Carlos",
+      "purchaseOrder": "",
+      "responsible": "Carlos",
+      "services": [],
+      "deliveryItems": [
+        {
+          "id": "qdncxnl5h",
+          "quantity": 200,
+          "description": "Parafusos  4x30_4x40_4x50   20 Parafusos de afastador 4x60 e 40 suportes de prateleiras ",
+          "color": "",
+          "supplier": "",
+          "deliveryOk": "Sim"
+        }
+      ],
+      "photos": [
+        {
+          "id": "g8f9x7geb",
+          "dataUrl": "",
+          "caption": "17653864170254376596669063779514.jpg",
+          "url": "https://drive.google.com/uc?id=1LuoQOW1LBuQk5Jje1I4ZK_5J1n0zuMWA&export=download"
+        }
+      ],
+      "createdAt": 1765382501156,
+      "createdBy": "Carlos",
+      "status": "Concluída",
+      "dateDone": "2025-12-17T10:36:13.944Z"
+    },
+    {
+      "id": "h3fmd8hai",
+      "requisitionNumber": "R-114",
+      "date": "2025-12-10T16:43:32.435Z",
+      "clientName": "Andreia Rocha 704",
+      "environment": "Sala",
+      "fitter": "Arthur",
+      "purchaseOrder": "",
+      "responsible": "Arthur",
+      "services": [
+        {
+          "id": "9ncxe2whs",
+          "quantity": 1,
+          "specification": "1995 x 60 x 25",
+          "description": "Cor canela - fitar todos os lados",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1765385012435,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateInProgress": "2025-12-10T16:49:53.982Z",
+      "dateDone": "2025-12-15T12:07:55.523Z"
+    },
+    {
+      "id": "u26qpumg4",
+      "requisitionNumber": "R-113",
+      "date": "2025-12-10T16:24:17.960Z",
+      "clientName": "Andreia Rocha 701",
+      "environment": "Cozinha",
+      "fitter": "Arthur",
+      "purchaseOrder": "",
+      "responsible": "Arthur",
+      "services": [
+        {
+          "id": "tb2geeka8",
+          "quantity": 1,
+          "specification": "515 x 100 x 18",
+          "description": "Qualquer cor - não precisa fitar",
+          "volume": 1
+        },
+        {
+          "id": "n5l68rezp",
+          "quantity": 1,
+          "specification": "295 x 100 x 18",
+          "description": "Qualquer cor - não precisa fitar",
+          "volume": 1
+        },
+        {
+          "id": "6mzwa34wo",
+          "quantity": 3,
+          "specification": "475 x 100 x 18",
+          "description": "Qualquer cor - não precisa fitar",
+          "volume": 1
+        },
+        {
+          "id": "9y6o82gku",
+          "quantity": 1,
+          "specification": "2050 x 100 x 18",
+          "description": "Qualquer cor - não precisa fitar",
+          "volume": 1
+        },
+        {
+          "id": "q3nqemp9n",
+          "quantity": 1,
+          "specification": "550 x 100 x 18",
+          "description": "Qualquer cor - não precisa fitar",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1765383857960,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateInProgress": "2025-12-10T16:49:41.925Z",
+      "dateDone": "2025-12-15T12:08:06.488Z"
+    },
+    {
+      "id": "jknqv2xsu",
+      "requisitionNumber": "R-112",
+      "date": "2025-12-10T16:20:19.027Z",
+      "clientName": "Andreia Rocha 703",
+      "environment": "Cozinha",
+      "fitter": "Arthur",
+      "purchaseOrder": "",
+      "responsible": "Arthur",
+      "services": [
+        {
+          "id": "hpcmhjneu",
+          "quantity": 1,
+          "specification": "585 x 100 x 18",
+          "description": "Qualquer cor - não precisa fitar",
+          "volume": 1
+        },
+        {
+          "id": "4oshosc6v",
+          "quantity": 1,
+          "specification": "300 x 100 x 18",
+          "description": "Qualquer cor - não precisa fitar",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1765383619027,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateInProgress": "2025-12-10T16:49:32.387Z",
+      "dateDone": "2025-12-15T12:08:30.165Z"
+    },
+    {
+      "id": "tqi6087la",
+      "requisitionNumber": "R-111",
+      "date": "2025-12-10T16:15:40.780Z",
+      "clientName": "Andreia Rocha 702",
+      "environment": "Cozinha",
+      "fitter": "Arthur",
+      "purchaseOrder": "",
+      "responsible": "Arthur",
+      "services": [
+        {
+          "id": "mv1uwxy4h",
+          "quantity": 3,
+          "specification": "475 x 100 x 18",
+          "description": "Qualquer cor - não precisa fitar",
+          "volume": 1
+        },
+        {
+          "id": "7i4em63u8",
+          "quantity": 1,
+          "specification": "2140 x 100 x 18",
+          "description": "Qualquer cor - não precisa fitar",
+          "volume": 1
+        },
+        {
+          "id": "mczv1ltqy",
+          "quantity": 1,
+          "specification": "525 x 100 x 18",
+          "description": "Qualquer cor - não precisa fitar",
+          "volume": 1
+        },
+        {
+          "id": "gdir5u896",
+          "quantity": 1,
+          "specification": "505 x 100 x 18",
+          "description": "Qualquer cor - não precisa fitar",
+          "volume": 1
+        },
+        {
+          "id": "wrxjcl33i",
+          "quantity": 1,
+          "specification": "295 x 100 x 18",
+          "description": "Qualquer cor - não precisa fitar",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1765383340780,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateInProgress": "2025-12-10T16:49:20.818Z",
+      "dateDone": "2025-12-15T12:08:55.782Z"
+    },
+    {
+      "id": "r97x1aidt",
+      "requisitionNumber": "R-110",
+      "date": "2025-12-09T17:07:39.371Z",
+      "clientName": "Juan",
+      "environment": "Quarto filha",
+      "fitter": "Arthur",
+      "purchaseOrder": "",
+      "responsible": "Arthur",
+      "services": [
+        {
+          "id": "m4t7yk4ui",
+          "quantity": 1,
+          "specification": "2075 x 179 x 9",
+          "description": "Cor Forest - Fitar os 4 lados",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1765300059371,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateInProgress": "2025-12-09T20:06:00.614Z",
+      "dateDone": "2025-12-17T10:36:31.804Z"
+    },
+    {
+      "id": "rhd6cneyc",
+      "requisitionNumber": "R-109",
+      "date": "2025-12-09T12:06:15.549Z",
+      "clientName": "Juan",
+      "environment": "Sala",
+      "fitter": "Rafael",
+      "purchaseOrder": "2322  2323",
+      "responsible": "Rafael",
+      "services": [
+        {
+          "id": "143jwv4s4",
+          "quantity": 1,
+          "specification": "Canela 6mm",
+          "description": "1 unid. 2114 x 106\n1 unid. 2114 x 106\n1 unid. 751 x 108\n1 unid. 2110 x 760\n1 unid. 2106 x 119\n1 unid. 2104 x 120\n1 unid. 772 x 122\n1 unid. 2600 x 800",
+          "volume": 8
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1765281975549,
+      "createdBy": "Rafael",
+      "status": "Concluída",
+      "dateInProgress": "2025-12-09T20:05:33.676Z",
+      "dateDone": "2025-12-17T10:36:53.721Z"
+    },
+    {
+      "id": "4rodq27oe",
+      "requisitionNumber": "R-108",
+      "date": "2025-12-09T12:02:52.023Z",
+      "clientName": "Juan",
+      "environment": "Sala",
+      "fitter": "Rafael",
+      "purchaseOrder": "2322  2323",
+      "responsible": "Rafael",
+      "services": [
+        {
+          "id": "79iouz5c8",
+          "quantity": 1,
+          "specification": "Canela 18",
+          "description": "1 unid  2466 x 106\n1 unid  2471 x 140\n1 unid  2472 x 183\n1 unid 2476 x 65\n1 unid   766 x 353\n1 unid   744 x 359",
+          "volume": 6
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1765281772023,
+      "createdBy": "Rafael",
+      "status": "Concluída",
+      "dateInProgress": "2025-12-09T20:05:23.039Z",
+      "dateDone": "2025-12-17T10:37:02.753Z"
+    },
+    {
+      "id": "65ilxfthl",
+      "requisitionNumber": "R-107",
+      "date": "2025-12-09T12:01:29.809Z",
+      "clientName": "Juan",
+      "environment": "Sala",
+      "fitter": "Rafael",
+      "purchaseOrder": "2322  2323",
+      "responsible": "Rafael",
+      "services": [
+        {
+          "id": "sx1gfrex1",
+          "quantity": 1,
+          "specification": "Pecan 6 mm",
+          "description": "1 unid  2600 x 801",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1765281689809,
+      "createdBy": "Rafael",
+      "status": "Concluída",
+      "dateInProgress": "2025-12-09T20:05:07.890Z",
+      "dateDone": "2025-12-17T10:37:13.370Z"
+    },
+    {
+      "id": "5716r34wk",
+      "requisitionNumber": "R-106",
+      "date": "2025-12-09T11:57:02.284Z",
+      "clientName": "Juan",
+      "environment": "Sala",
+      "fitter": "Rafael",
+      "purchaseOrder": "2322   2323",
+      "responsible": "Rafael",
+      "services": [
+        {
+          "id": "cy2i9mhcf",
+          "quantity": 1,
+          "specification": "Pecan 18",
+          "description": "2556 x 90",
+          "volume": 1
+        },
+        {
+          "id": "mb0dmp3do",
+          "quantity": 1,
+          "specification": "Pecan 18",
+          "description": "2555 x 106",
+          "volume": 1
+        },
+        {
+          "id": "0dpiqtoa7",
+          "quantity": 1,
+          "specification": "Pexan 18",
+          "description": "1004 x 437",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1765281422284,
+      "createdBy": "Rafael",
+      "status": "Concluída",
+      "dateInProgress": "2025-12-09T20:03:47.383Z",
+      "dateDone": "2025-12-17T10:37:31.806Z"
+    },
+    {
+      "id": "rtm44q8o1",
+      "requisitionNumber": "R-105",
+      "date": "2025-12-04T19:03:57.977Z",
+      "clientName": "Helen ",
+      "environment": "Quarto Bia",
+      "fitter": "Carlos",
+      "purchaseOrder": "Mjf 2274",
+      "responsible": "Carlos",
+      "services": [
+        {
+          "id": "c2we56dje",
+          "quantity": 1,
+          "specification": "540 X 462 X 18",
+          "description": "Pecan fitar 1 lado no 462 ",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1764875037983,
+      "createdBy": "Carlos",
+      "status": "Concluída",
+      "dateInProgress": "2025-12-04T19:11:01.961Z",
+      "dateDone": "2025-12-17T10:37:41.807Z"
+    },
+    {
+      "id": "237gwzva9",
+      "requisitionNumber": "R-104",
+      "date": "2025-12-04T18:52:02.985Z",
+      "clientName": "Andreia Rocha 702",
+      "environment": "Cozinha",
+      "fitter": "Mateus",
+      "purchaseOrder": "",
+      "responsible": "Mateus",
+      "services": [
+        {
+          "id": "pqs2ktula",
+          "quantity": 2,
+          "specification": "2260x100x18",
+          "description": "qualquer cor rodapé ",
+          "volume": 1
+        },
+        {
+          "id": "eqvc1du8s",
+          "quantity": 6,
+          "specification": "510x100x18",
+          "description": "qualquer cor rodapé ",
+          "volume": 1
+        },
+        {
+          "id": "dxwitljec",
+          "quantity": 2,
+          "specification": "340x100x18",
+          "description": "qualquer cor rodapé ",
+          "volume": 1
+        },
+        {
+          "id": "md5hm1jzj",
+          "quantity": 4,
+          "specification": "570x100x18",
+          "description": "",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1764874322985,
+      "createdBy": "Mateus",
+      "status": "Concluída",
+      "dateInProgress": "2025-12-04T19:16:33.593Z",
+      "dateDone": "2025-12-17T10:37:51.841Z"
+    },
+    {
+      "id": "u6m401692",
+      "requisitionNumber": "R-103",
+      "date": "2025-12-03T17:39:22.567Z",
+      "clientName": "Andreia Rocha 504",
+      "environment": "Cozinha - Rodapé",
+      "fitter": "Henrique",
+      "purchaseOrder": "",
+      "responsible": "Mateus",
+      "services": [
+        {
+          "id": "9hdn81i5a",
+          "quantity": 1,
+          "specification": "920  x 60 x 18",
+          "description": "Qualquer cor ",
+          "volume": null
+        },
+        {
+          "id": "xugrr188b",
+          "quantity": 3,
+          "specification": "460 x 100 x 18",
+          "description": "Qualquer cor ",
+          "volume": null
+        },
+        {
+          "id": "73dg4vh5s",
+          "quantity": 1,
+          "specification": "1720 x 100 x 18",
+          "description": "Qualquer cor ",
+          "volume": null
+        },
+        {
+          "id": "d79ac58jn",
+          "quantity": 1,
+          "specification": "550 x 100 x 18",
+          "description": "Qualquer cor ",
+          "volume": 1
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1764783562572,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateDone": "2025-12-04T12:10:56.986Z"
+    },
+    {
+      "id": "hkwk4kink",
+      "requisitionNumber": "R-102",
+      "date": "2025-12-03T15:56:25.982Z",
+      "clientName": "Andreia Rocha 702",
+      "environment": "Cozinha",
+      "fitter": "Mateus",
+      "purchaseOrder": "",
+      "responsible": "Mateus",
+      "services": [
+        {
+          "id": "mndk4hr18",
+          "quantity": 1,
+          "specification": "523 x 246 x 6",
+          "description": "Cor Prisma - não precisa fitar",
+          "volume": null
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [],
+      "createdAt": 1764777385982,
+      "createdBy": "Breno",
+      "status": "Concluída",
+      "dateInProgress": "2025-12-03T16:07:44.622Z",
+      "dateDone": "2025-12-17T10:38:01.495Z"
+    },
+    {
+      "id": "5p6mdmeip",
+      "requisitionNumber": "R-101",
+      "date": "2025-12-02",
+      "clientName": "Juan ",
+      "environment": "Suite hóspede ",
+      "fitter": "Kelvin",
+      "purchaseOrder": "",
+      "responsible": "Kelvin",
+      "services": [],
+      "deliveryItems": [
+        {
+          "id": "ibfohrlvl",
+          "quantity": 3,
+          "description": "Pés de guarda roupa",
+          "color": "",
+          "supplier": "",
+          "deliveryOk": "Sim"
+        },
+        {
+          "id": "tkj0bfgt5",
+          "quantity": 5,
+          "description": "Fixa tudo",
+          "color": "",
+          "supplier": "",
+          "deliveryOk": "Sim"
+        }
+      ],
+      "photos": [],
+      "createdAt": 1764639084785,
+      "createdBy": "Kelvin",
+      "status": "Concluída",
+      "dateDone": "2025-12-02T17:25:37.723Z"
+    },
+    {
+      "id": "axwarn5uw",
+      "requisitionNumber": "R-100",
+      "date": "2025-11-30",
+      "clientName": "Teste",
+      "environment": "Sala",
+      "fitter": "José",
+      "purchaseOrder": "MJF 2235",
+      "responsible": "André",
+      "services": [
+        {
+          "id": "thkc89c4q",
+          "quantity": 3,
+          "specification": "680 x 540 x 18",
+          "description": "Cor canela - fitar todos os lados",
+          "volume": null
+        }
+      ],
+      "deliveryItems": [],
+      "photos": [
+        {
+          "id": "9gv1jh1mf",
+          "dataUrl": "",
+          "caption": "image.jpg",
+          "url": "https://drive.google.com/uc?id=16U8y3mb9SWHtOPiJ2NXWrGNm2GYpthwL&export=download"
+        },
+        {
+          "id": "z1w0j4z69",
+          "dataUrl": "",
+          "caption": "image.jpg",
+          "url": "https://drive.google.com/uc?id=1E1UG1BW9DI72uPWYD7aDUVtElOrWiysw&export=download"
+        }
+      ],
+      "createdAt": 1764511830274,
+      "createdBy": "admin",
+      "status": "Concluída",
+      "dateDone": "2025-12-01T03:31:04.781Z",
+      "dateInProgress": "2025-12-01T03:26:15.163Z"
+    }
+  ]
+}
