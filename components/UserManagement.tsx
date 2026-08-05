@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Save, Plus, Loader2, Key, Trash2, Pencil } from 'lucide-react';
+import { ArrowLeft, Save, Plus, Loader2, Key, Trash2, Pencil, Database, Download, CheckCircle2 } from 'lucide-react';
 import { User, UserRole } from '../types';
-import { registerUser, changePassword, getUsers, deleteUser, updateUser } from '../services/googleSheets';
+import { registerUser, changePassword, getUsers, deleteUser, updateUser, backupAndMigrateFromSheets } from '../services/googleSheets';
 
 interface UserManagementProps {
   currentUser: User;
@@ -9,9 +9,10 @@ interface UserManagementProps {
 }
 
 const UserManagement: React.FC<UserManagementProps> = ({ currentUser, onClose }) => {
-  const [activeTab, setActiveTab] = useState<'create' | 'password' | 'list'>('list');
+  const [activeTab, setActiveTab] = useState<'create' | 'password' | 'list' | 'migrate'>('list');
   const [userList, setUserList] = useState<User[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isMigrating, setIsMigrating] = useState(false);
   const [msg, setMsg] = useState({ type: '', text: '' });
 
   // Create/Edit Form
@@ -117,6 +118,25 @@ const UserManagement: React.FC<UserManagementProps> = ({ currentUser, onClose })
     }
   };
 
+  const handleMigration = async () => {
+    if (!window.confirm("Deseja realizar o backup completo dos dados do Google Sheets e migrá-los para o Firebase? Um arquivo JSON com o backup será baixado automaticamente.")) {
+      return;
+    }
+
+    setIsMigrating(true);
+    setMsg({ type: '', text: '' });
+
+    const result = await backupAndMigrateFromSheets();
+    setIsMigrating(false);
+
+    if (result.success) {
+      setMsg({ type: 'success', text: result.message });
+      loadUsers();
+    } else {
+      setMsg({ type: 'error', text: result.message });
+    }
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Header */}
@@ -125,7 +145,7 @@ const UserManagement: React.FC<UserManagementProps> = ({ currentUser, onClose })
           <ArrowLeft className="w-6 h-6 text-gray-600" />
         </button>
         <h1 className="text-lg font-bold text-gray-800">
-          {currentUser.role === 'gestor' ? 'Gestão de Usuários' : 'Minha Conta'}
+          {currentUser.role === 'gestor' ? 'Gestão e Migração Firebase' : 'Minha Conta'}
         </h1>
       </div>
 
@@ -133,24 +153,30 @@ const UserManagement: React.FC<UserManagementProps> = ({ currentUser, onClose })
         
         {/* Tabs for Gestor */}
         {currentUser.role === 'gestor' && (
-          <div className="flex bg-white rounded-lg shadow-sm p-1 mb-4">
+          <div className="flex bg-white rounded-lg shadow-sm p-1 mb-4 overflow-x-auto">
             <button 
               onClick={() => { setActiveTab('list'); setIsEditing(false); setMsg({ type: '', text: '' }); }}
-              className={`flex-1 py-2 text-sm font-bold rounded ${activeTab === 'list' ? 'bg-brand-red text-white' : 'text-gray-500 hover:bg-gray-100'}`}
+              className={`flex-1 py-2 px-2 text-xs sm:text-sm font-bold rounded whitespace-nowrap ${activeTab === 'list' ? 'bg-brand-red text-white' : 'text-gray-500 hover:bg-gray-100'}`}
             >
               Lista
             </button>
             <button 
               onClick={() => { setActiveTab('create'); resetForm(); }}
-              className={`flex-1 py-2 text-sm font-bold rounded ${activeTab === 'create' ? 'bg-brand-red text-white' : 'text-gray-500 hover:bg-gray-100'}`}
+              className={`flex-1 py-2 px-2 text-xs sm:text-sm font-bold rounded whitespace-nowrap ${activeTab === 'create' ? 'bg-brand-red text-white' : 'text-gray-500 hover:bg-gray-100'}`}
             >
               {isEditing ? 'Editar' : 'Novo'}
             </button>
             <button 
               onClick={() => { setActiveTab('password'); setIsEditing(false); setMsg({ type: '', text: '' }); }}
-              className={`flex-1 py-2 text-sm font-bold rounded ${activeTab === 'password' ? 'bg-brand-red text-white' : 'text-gray-500 hover:bg-gray-100'}`}
+              className={`flex-1 py-2 px-2 text-xs sm:text-sm font-bold rounded whitespace-nowrap ${activeTab === 'password' ? 'bg-brand-red text-white' : 'text-gray-500 hover:bg-gray-100'}`}
             >
               Senha
+            </button>
+            <button 
+              onClick={() => { setActiveTab('migrate'); setIsEditing(false); setMsg({ type: '', text: '' }); }}
+              className={`flex-1 py-2 px-2 text-xs sm:text-sm font-bold rounded whitespace-nowrap ${activeTab === 'migrate' ? 'bg-brand-red text-white' : 'text-gray-500 hover:bg-gray-100'}`}
+            >
+              Backup & Migração
             </button>
           </div>
         )}
@@ -158,6 +184,46 @@ const UserManagement: React.FC<UserManagementProps> = ({ currentUser, onClose })
         {msg.text && (
           <div className={`p-3 rounded text-sm text-center font-medium ${msg.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
             {msg.text}
+          </div>
+        )}
+
+        {/* ABA DE MIGRAÇÃO E BACKUP */}
+        {activeTab === 'migrate' && currentUser.role === 'gestor' && (
+          <div className="bg-white p-6 rounded-lg shadow-sm space-y-4 border border-gray-100">
+            <div className="flex items-center gap-3 text-brand-red mb-2">
+              <Database className="w-8 h-8 shrink-0" />
+              <div>
+                <h3 className="font-bold text-gray-800 text-base">Banco de Dados Firebase</h3>
+                <p className="text-xs text-gray-500">Migração e Backup do Google Sheets</p>
+              </div>
+            </div>
+
+            <p className="text-xs text-gray-600 leading-relaxed bg-blue-50 p-3 rounded-lg border border-blue-100">
+              O sistema agora utiliza o <strong>Firebase Google Cloud Firestore</strong> como seu banco de dados principal. Antes de utilizar, você pode baixar o backup completo da sua planilha e migrar todos os usuários e requisições para o Firebase com 1 clique.
+            </p>
+
+            <button
+              onClick={handleMigration}
+              disabled={isMigrating}
+              className="w-full bg-brand-red text-white py-3 rounded-lg font-bold shadow hover:bg-red-700 transition flex justify-center items-center gap-2 disabled:opacity-50"
+            >
+              {isMigrating ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  <span>Gerando Backup e Migrando...</span>
+                </>
+              ) : (
+                <>
+                  <Download className="w-5 h-5" />
+                  <span>Fazer Backup e Migrar para Firebase</span>
+                </>
+              )}
+            </button>
+
+            <div className="text-[11px] text-gray-400 text-center flex items-center justify-center gap-1">
+              <CheckCircle2 className="w-3.5 h-3.5 text-green-500" />
+              <span>O backup é salvo em arquivo .json e no Firestore.</span>
+            </div>
           </div>
         )}
 

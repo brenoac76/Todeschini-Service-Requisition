@@ -1,0 +1,41 @@
+{
+  "entities": {
+    "users": {
+      "title": "User",
+      "description": "System users and roles",
+      "type": "object",
+      "properties": {
+        "username": { "type": "string" },
+        "password": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string" }
+      },
+      "required": ["username", "name", "role"]
+    },
+    "requisitions": {
+      "title": "Requisition",
+      "description": "Service requisitions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "requisitionNumber": { "type": "string" },
+        "date": { "type": "string" },
+        "dateInProgress": { "type": "string" },
+        "dateDone": { "type": "string" },
+        "clientName": { "type": "string" },
+        "environment": { "type": "string" },
+        "fitter": { "type": "string" },
+        "purchaseOrder": { "type": "string" },
+        "responsible": { "type": "string" },
+        "services": { "type": "array" },
+        "deliveryItems": { "type": "array" },
+        "photos": { "type": "array" },
+        "createdAt": { "type": "number" },
+        "createdBy": { "type": "string" },
+        "status": { "type": "string" },
+        "canceledBy": { "type": "string" }
+      },
+      "required": ["id", "requisitionNumber", "status"]
+    }
+  }
+}

@@ -1,5 +1,6 @@
 
 import { Requisition, User } from '../types';
+import * as firebaseService from './firebase';
 
 // IMPORTANTE: Se você fez uma nova implantação no Apps Script, verifique se este URL mudou.
 const API_URL = "https://script.google.com/macros/s/AKfycbwNITKLC-gmCe4mSxgjQCRmH20pPkChwiSPqlOR-OFV2O4jqblxCLcEAwNoe4jt9q5Byw/exec";
@@ -15,97 +16,9 @@ interface SheetResponse {
   finalNumber?: string;
 }
 
-// --- Funções de Autenticação e Usuários ---
+// --- Funções Diretas da Planilha Google Sheets (Usadas para Backup e Migração) ---
 
-export const loginUser = async (username: string, password: string): Promise<{ success: boolean; user?: User; message?: string }> => {
-  try {
-    const response = await fetch(API_URL, {
-      method: "POST",
-      redirect: "follow",
-      body: JSON.stringify({ action: 'login', username, password }),
-    });
-    const result = await response.json() as SheetResponse;
-    if (result.status === 'success' && result.user) {
-      return { success: true, user: result.user };
-    }
-    return { success: false, message: result.message || 'Falha no login' };
-  } catch (e) {
-    return { success: false, message: 'Erro de conexão' };
-  }
-};
-
-export const registerUser = async (userData: User & { password?: string }): Promise<{ success: boolean; message?: string }> => {
-  try {
-    const response = await fetch(API_URL, {
-      method: "POST",
-      redirect: "follow",
-      body: JSON.stringify({ 
-        action: 'createUser', 
-        username: userData.username, 
-        password: userData.password, 
-        name: userData.name, 
-        role: userData.role 
-      }),
-    });
-    const result = await response.json() as SheetResponse;
-    return { success: result.status === 'success', message: result.message };
-  } catch (e) {
-    return { success: false, message: 'Erro de conexão' };
-  }
-};
-
-export const updateUser = async (userData: User & { password?: string }): Promise<{ success: boolean; message?: string }> => {
-  try {
-    const response = await fetch(API_URL, {
-      method: "POST",
-      redirect: "follow",
-      body: JSON.stringify({ 
-        action: 'updateUser', 
-        username: userData.username, // Username é a chave, não muda
-        password: userData.password, 
-        name: userData.name, 
-        role: userData.role 
-      }),
-    });
-    const result = await response.json() as SheetResponse;
-    return { success: result.status === 'success', message: result.message };
-  } catch (e) {
-    return { success: false, message: 'Erro de conexão' };
-  }
-};
-
-export const deleteUser = async (username: string): Promise<{ success: boolean; message?: string }> => {
-  try {
-    const response = await fetch(API_URL, {
-      method: "POST",
-      redirect: "follow",
-      body: JSON.stringify({ 
-        action: 'deleteUser', 
-        username: username
-      }),
-    });
-    const result = await response.json() as SheetResponse;
-    return { success: result.status === 'success', message: result.message };
-  } catch (e) {
-    return { success: false, message: 'Erro de conexão' };
-  }
-};
-
-export const changePassword = async (username: string, newPassword: string, oldPassword?: string): Promise<{ success: boolean; message?: string }> => {
-  try {
-    const response = await fetch(API_URL, {
-      method: "POST",
-      redirect: "follow",
-      body: JSON.stringify({ action: 'changePassword', username, newPassword, oldPassword }),
-    });
-    const result = await response.json() as SheetResponse;
-    return { success: result.status === 'success', message: result.message };
-  } catch (e) {
-    return { success: false, message: 'Erro de conexão' };
-  }
-};
-
-export const getUsers = async (): Promise<User[]> => {
+export const getSheetsUsers = async (): Promise<User[]> => {
   try {
     const response = await fetch(API_URL, {
       method: "POST",
@@ -119,63 +32,7 @@ export const getUsers = async (): Promise<User[]> => {
   }
 };
 
-
-// --- Funções de Requisição Existentes ---
-
-export const saveToGoogleSheets = async (data: Requisition): Promise<{ success: boolean; driveError?: string; emailError?: string; finalNumber?: string }> => {
-  try {
-    console.log(`Enviando dados para: ${API_URL}`);
-    
-    const response = await fetch(API_URL, {
-      method: "POST",
-      redirect: "follow",
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8", 
-      },
-      body: JSON.stringify(data),
-    });
-
-    if (!response.ok) {
-      console.error(`Erro HTTP: ${response.status}`);
-      return { success: false };
-    }
-
-    const result = await response.json() as SheetResponse;
-    console.log("Resposta do Servidor:", result);
-
-    if (result && result.status === 'success') {
-      return { success: true, driveError: result.driveError, emailError: result.emailError, finalNumber: result.finalNumber };
-    } else {
-      console.error("Erro retornado pelo script:", result);
-      return { success: false };
-    }
-
-  } catch (error) {
-    console.error("FALHA CRÍTICA DE REDE:", error);
-    return { success: false };
-  }
-};
-
-export const deleteFromGoogleSheets = async (id: string): Promise<boolean> => {
-  try {
-    const response = await fetch(API_URL, {
-      method: "POST",
-      redirect: "follow",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify({ action: 'delete', id: id }),
-    });
-
-    if (!response.ok) return false;
-    const result = await response.json() as SheetResponse;
-    return result.status === 'success';
-
-  } catch (error) {
-    console.error("Erro ao excluir:", error);
-    return false;
-  }
-};
-
-export const getRequisitions = async (): Promise<Requisition[]> => {
+export const getSheetsRequisitions = async (): Promise<Requisition[]> => {
   try {
     const response = await fetch(API_URL, { method: "GET", redirect: "follow" });
     if (!response.ok) return [];
@@ -188,10 +45,78 @@ export const getRequisitions = async (): Promise<Requisition[]> => {
       return [];
     }
   } catch (error) {
-    console.error("Erro GET:", error);
+    console.error("Erro GET Google Sheets:", error);
     return [];
   }
 };
+
+export const backupAndMigrateFromSheets = firebaseService.backupAndMigrateFromSheets;
+
+// --- Funções de Autenticação e Usuários (Firebase) ---
+
+export const loginUser = firebaseService.loginUser;
+export const registerUser = firebaseService.registerUser;
+export const updateUser = firebaseService.updateUser;
+export const deleteUser = firebaseService.deleteUser;
+export const changePassword = firebaseService.changePassword;
+export const getUsers = firebaseService.getUsers;
+
+// --- Funções de Requisição (Firebase com Sincronização Opcional) ---
+
+export const saveToGoogleSheets = async (data: Requisition): Promise<{ success: boolean; driveError?: string; emailError?: string; finalNumber?: string }> => {
+  // 1. Salva no Firebase Firestore (Banco principal)
+  const fbResult = await firebaseService.saveToDatabase(data);
+
+  // 2. Tenta enviar para o Apps Script em segundo plano para notificações de email/drive se necessário
+  let sheetDriveError: string | undefined;
+  let sheetEmailError: string | undefined;
+  let sheetFinalNumber: string | undefined;
+
+  try {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      redirect: "follow",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(data),
+    });
+    if (response.ok) {
+      const result = await response.json() as SheetResponse;
+      if (result.status === 'success') {
+        sheetDriveError = result.driveError;
+        sheetEmailError = result.emailError;
+        sheetFinalNumber = result.finalNumber;
+      }
+    }
+  } catch (e) {
+    console.warn("Erro ao notificar Apps Script em segundo plano:", e);
+  }
+
+  return { 
+    success: fbResult.success, 
+    driveError: sheetDriveError, 
+    emailError: sheetEmailError, 
+    finalNumber: sheetFinalNumber 
+  };
+};
+
+export const deleteFromGoogleSheets = async (id: string): Promise<boolean> => {
+  const fbSuccess = await firebaseService.deleteFromDatabase(id);
+  
+  // Exclui da planilha em segundo plano
+  try {
+    fetch(API_URL, {
+      method: "POST",
+      redirect: "follow",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({ action: 'delete', id: id }),
+    }).catch(() => {});
+  } catch (e) {}
+
+  return fbSuccess;
+};
+
+export const getRequisitions = firebaseService.getRequisitions;
+
 
 export const fetchDriveImage = async (driveUrl: string): Promise<string | null> => {
   try {
