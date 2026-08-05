@@ -303,6 +303,25 @@ export const getUsers = async (): Promise<User[]> => {
         role: data.role || 'montador'
       });
     });
+
+    if (users.length === 0) {
+      console.log("Nenhum usuário no Firebase. Buscando dados da planilha do Google Sheets...");
+      const sheetsUsers = await getSheetsUsers();
+      if (sheetsUsers.length > 0) {
+        for (const u of sheetsUsers) {
+          if (u.username) {
+            await setDoc(doc(db, USERS_COL, u.username), {
+              username: u.username,
+              password: u.password || '123456',
+              name: u.name || u.username,
+              role: u.role || 'montador'
+            }, { merge: true });
+          }
+        }
+        return sheetsUsers;
+      }
+    }
+
     return users;
   } catch (e: any) {
     console.error("Erro buscar usuários Firebase:", e);
@@ -342,6 +361,21 @@ export const getRequisitions = async (): Promise<Requisition[]> => {
       const data = docSnap.data() as Requisition;
       requisitions.push(data);
     });
+
+    if (requisitions.length === 0) {
+      console.log("Nenhuma requisição no Firebase. Buscando dados da planilha do Google Sheets...");
+      const sheetsReqs = await getSheetsRequisitions();
+      if (sheetsReqs.length > 0) {
+        for (const r of sheetsReqs) {
+          if (r.id) {
+            const cleanReq = JSON.parse(JSON.stringify(r));
+            await setDoc(doc(db, REQS_COL, r.id), cleanReq, { merge: true });
+          }
+        }
+        return sheetsReqs;
+      }
+    }
+
     return requisitions;
   } catch (error) {
     console.error("Erro ao carregar requisições do Firebase:", error);
