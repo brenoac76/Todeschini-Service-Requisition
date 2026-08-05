@@ -16,9 +16,21 @@ import { getRequisitions as getSheetsRequisitions, getUsers as getSheetsUsers } 
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId || '(default)');
 
+const withTimeout = <T>(promise: Promise<T>, ms: number = 6000): Promise<T> => {
+  return Promise.race([
+    promise,
+    new Promise<T>((_, reject) => 
+      setTimeout(() => reject(new Error(`Timeout Firebase (${ms}ms)`)), ms)
+    )
+  ]);
+};
+
 const USERS_COL = 'users';
 const REQS_COL = 'requisitions';
 const BACKUPS_COL = 'backups';
+
+let autoMigrationDone = false;
+let isMigratingInProgress = false;
 
 export interface MigrationResult {
   success: boolean;
@@ -30,10 +42,13 @@ export interface MigrationResult {
 
 // --- Backup & Migration Tool ---
 
-export const backupAndMigrateFromSheets = async (): Promise<MigrationResult> => {
+export const backupAndMigrateFromSheets = async (triggerDownload = false): Promise<MigrationResult> => {
+  if (isMigratingInProgress) {
+    return { success: false, message: 'Migração já em andamento.' };
+  }
+  isMigratingInProgress = true;
+
   try {
-    console.log("Iniciando backup dos dados do Google Sheets...");
-    
     // 1. Buscar dados atuais do Google Sheets
     const sheetsUsers = await getSheetsUsers();
     const sheetsReqs = await getSheetsRequisitions();
@@ -52,19 +67,21 @@ export const backupAndMigrateFromSheets = async (): Promise<MigrationResult> => 
     const backupKey = `todeschini_sheets_backup_${Date.now()}`;
     localStorage.setItem(backupKey, JSON.stringify(backupData));
 
-    // Gerar download automático do arquivo JSON de backup para o computador do usuário
-    try {
-      const blob = new Blob([JSON.stringify(backupData, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `backup_google_sheets_todeschini_${new Date().toISOString().slice(0, 10)}.json`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    } catch (e) {
-      console.warn("Não foi possível acionar o download automático de arquivo de backup:", e);
+    // Gerar download automático apenas se solicitado expressamente pelo usuário na interface
+    if (triggerDownload) {
+      try {
+        const blob = new Blob([JSON.stringify(backupData, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `backup_google_sheets_todeschini_${new Date().toISOString().slice(0, 10)}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      } catch (e) {
+        console.warn("Não foi possível acionar o download do backup:", e);
+      }
     }
 
     // 3. Salvar registro de backup no próprio Firebase Firestore
@@ -73,18 +90,15 @@ export const backupAndMigrateFromSheets = async (): Promise<MigrationResult> => 
       id: backupDocId,
       createdAt: new Date().toISOString(),
       usersCount: sheetsUsers.length,
-      requisitionsCount: sheetsReqs.length,
-      data: backupData
+      requisitionsCount: sheetsReqs.length
     });
-
-    console.log("Backup concluído. Migrando dados para o Firebase Firestore...");
 
     // 4. Migrar Usuários para o Firebase
     let usersCount = 0;
     for (const u of sheetsUsers) {
       if (u.username) {
-        await setDoc(doc(db, USERS_COL, u.username), {
-          username: u.username,
+        await setDoc(doc(db, USERS_COL, u.username.trim().toLowerCase()), {
+          username: u.username.trim().toLowerCase(),
           password: u.password || '123456',
           name: u.name || u.username,
           role: u.role || 'montador'
@@ -93,7 +107,6 @@ export const backupAndMigrateFromSheets = async (): Promise<MigrationResult> => 
       }
     }
 
-    // Garante que o usuário admin padrão exista se a lista estiver vazia
     if (usersCount === 0) {
       await setDoc(doc(db, USERS_COL, 'admin'), {
         username: 'admin',
@@ -107,20 +120,19 @@ export const backupAndMigrateFromSheets = async (): Promise<MigrationResult> => 
     let reqsCount = 0;
     for (const r of sheetsReqs) {
       if (r.id) {
-        // Garantir que não haja valores undefined para o Firestore
         const cleanReq = JSON.parse(JSON.stringify(r));
         await setDoc(doc(db, REQS_COL, r.id), cleanReq, { merge: true });
         reqsCount++;
       }
     }
 
-    // Marcar flag de migração concluída no localStorage
+    autoMigrationDone = true;
     localStorage.setItem('todeschini_firebase_migrated', 'true');
 
     return {
       success: true,
-      message: `Backup gerado com sucesso! Migrados ${usersCount} usuários e ${reqsCount} requisições do Google Sheets para o Firebase.`,
-      backupFileCreated: true,
+      message: `Backup gerado com sucesso! Migrados ${usersCount} usuários e ${reqsCount} requisições para o Firebase.`,
+      backupFileCreated: triggerDownload,
       usersMigrated: usersCount,
       requisitionsMigrated: reqsCount
     };
@@ -131,6 +143,8 @@ export const backupAndMigrateFromSheets = async (): Promise<MigrationResult> => 
       success: false,
       message: `Erro durante a migração: ${error.message || 'Falha de conexão'}`
     };
+  } finally {
+    isMigratingInProgress = false;
   }
 };
 
@@ -140,30 +154,32 @@ export const loginUser = async (username: string, password: string): Promise<{ s
   try {
     const cleanUsername = username.trim().toLowerCase();
     
-    // Tenta buscar no Firebase
-    let userDoc = await getDoc(doc(db, USERS_COL, cleanUsername));
-    
-    // Se o usuário não existir no Firebase, tenta auto-migração do Google Sheets
-    if (!userDoc.exists()) {
-      console.log("Usuário não encontrado no Firebase. Buscando e migrando dados do Google Sheets...");
-      await backupAndMigrateFromSheets();
-      userDoc = await getDoc(doc(db, USERS_COL, cleanUsername));
-    }
-    
-    if (userDoc.exists()) {
-      const userData = userDoc.data() as User & { password?: string };
-      if (userData.password === password) {
-        return { 
-          success: true, 
-          user: { 
-            username: userData.username, 
-            name: userData.name, 
-            role: userData.role 
-          } 
-        };
-      } else {
-        return { success: false, message: 'Senha incorreta' };
+    // Tenta buscar no Firebase com timeout curto
+    try {
+      let userDoc = await withTimeout(getDoc(doc(db, USERS_COL, cleanUsername)), 4000);
+      
+      if (!userDoc.exists() && !autoMigrationDone) {
+        await backupAndMigrateFromSheets();
+        userDoc = await withTimeout(getDoc(doc(db, USERS_COL, cleanUsername)), 4000);
       }
+      
+      if (userDoc.exists()) {
+        const userData = userDoc.data() as User & { password?: string };
+        if (userData.password === password) {
+          return { 
+            success: true, 
+            user: { 
+              username: userData.username, 
+              name: userData.name, 
+              role: userData.role 
+            } 
+          };
+        } else {
+          return { success: false, message: 'Senha incorreta' };
+        }
+      }
+    } catch (fbErr) {
+      console.warn("Consulta Firestore temporariamente indisponível, tentando fallback Sheets:", fbErr);
     }
 
     // Fallback: Tenta validar diretamente na API do Google Sheets e migra o usuário
@@ -176,13 +192,13 @@ export const loginUser = async (username: string, password: string): Promise<{ s
       });
       const result = await response.json();
       if (result.status === 'success' && result.user) {
-        // Salva e migra este usuário para o Firebase
-        await setDoc(doc(db, USERS_COL, cleanUsername), {
+        // Salva e migra este usuário para o Firebase em segundo plano
+        setDoc(doc(db, USERS_COL, cleanUsername), {
           username: cleanUsername,
           password: password,
           name: result.user.name || cleanUsername,
           role: result.user.role || 'montador'
-        }, { merge: true });
+        }, { merge: true }).catch(() => {});
 
         return {
           success: true,
@@ -200,7 +216,7 @@ export const loginUser = async (username: string, password: string): Promise<{ s
     // Se o banco de dados estiver vazio, fallback inicial com admin padrão
     if (cleanUsername === 'admin' && password === '123') {
       const defaultAdmin: User = { username: 'admin', name: 'Administrador', role: 'gestor' };
-      await setDoc(doc(db, USERS_COL, 'admin'), { ...defaultAdmin, password: '123' });
+      setDoc(doc(db, USERS_COL, 'admin'), { ...defaultAdmin, password: '123' }).catch(() => {});
       return { success: true, user: defaultAdmin };
     }
 
@@ -293,7 +309,7 @@ export const changePassword = async (username: string, newPassword: string, oldP
 
 export const getUsers = async (): Promise<User[]> => {
   try {
-    const querySnapshot = await getDocs(collection(db, USERS_COL));
+    const querySnapshot = await withTimeout(getDocs(collection(db, USERS_COL)), 5000);
     const users: User[] = [];
     querySnapshot.forEach((docSnap) => {
       const data = docSnap.data();
@@ -304,18 +320,18 @@ export const getUsers = async (): Promise<User[]> => {
       });
     });
 
-    if (users.length === 0) {
-      console.log("Nenhum usuário no Firebase. Buscando dados da planilha do Google Sheets...");
+    if (users.length === 0 && !autoMigrationDone) {
+      autoMigrationDone = true;
       const sheetsUsers = await getSheetsUsers();
       if (sheetsUsers.length > 0) {
         for (const u of sheetsUsers) {
           if (u.username) {
-            await setDoc(doc(db, USERS_COL, u.username), {
-              username: u.username,
+            setDoc(doc(db, USERS_COL, u.username.trim().toLowerCase()), {
+              username: u.username.trim().toLowerCase(),
               password: u.password || '123456',
               name: u.name || u.username,
               role: u.role || 'montador'
-            }, { merge: true });
+            }, { merge: true }).catch(() => {});
           }
         }
         return sheetsUsers;
@@ -324,8 +340,8 @@ export const getUsers = async (): Promise<User[]> => {
 
     return users;
   } catch (e: any) {
-    console.error("Erro buscar usuários Firebase:", e);
-    return [];
+    console.warn("Firebase getUsers fallback to Google Sheets:", e);
+    return await getSheetsUsers();
   }
 };
 
@@ -355,21 +371,21 @@ export const deleteFromDatabase = async (id: string): Promise<boolean> => {
 
 export const getRequisitions = async (): Promise<Requisition[]> => {
   try {
-    const querySnapshot = await getDocs(collection(db, REQS_COL));
+    const querySnapshot = await withTimeout(getDocs(collection(db, REQS_COL)), 5000);
     const requisitions: Requisition[] = [];
     querySnapshot.forEach((docSnap) => {
       const data = docSnap.data() as Requisition;
       requisitions.push(data);
     });
 
-    if (requisitions.length === 0) {
-      console.log("Nenhuma requisição no Firebase. Buscando dados da planilha do Google Sheets...");
+    if (requisitions.length === 0 && !autoMigrationDone) {
+      autoMigrationDone = true;
       const sheetsReqs = await getSheetsRequisitions();
       if (sheetsReqs.length > 0) {
         for (const r of sheetsReqs) {
           if (r.id) {
             const cleanReq = JSON.parse(JSON.stringify(r));
-            await setDoc(doc(db, REQS_COL, r.id), cleanReq, { merge: true });
+            setDoc(doc(db, REQS_COL, r.id), cleanReq, { merge: true }).catch(() => {});
           }
         }
         return sheetsReqs;
@@ -378,7 +394,7 @@ export const getRequisitions = async (): Promise<Requisition[]> => {
 
     return requisitions;
   } catch (error) {
-    console.error("Erro ao carregar requisições do Firebase:", error);
-    return [];
+    console.warn("Firebase getRequisitions fallback to Google Sheets:", error);
+    return await getSheetsRequisitions();
   }
 };

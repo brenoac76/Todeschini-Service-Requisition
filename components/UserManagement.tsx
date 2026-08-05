@@ -126,7 +126,7 @@ const UserManagement: React.FC<UserManagementProps> = ({ currentUser, onClose })
     setIsMigrating(true);
     setMsg({ type: '', text: '' });
 
-    const result = await backupAndMigrateFromSheets();
+    const result = await backupAndMigrateFromSheets(true);
     setIsMigrating(false);
 
     if (result.success) {
