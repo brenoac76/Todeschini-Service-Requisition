@@ -143,14 +143,11 @@ export const loginUser = async (username: string, password: string): Promise<{ s
     // Tenta buscar no Firebase
     let userDoc = await getDoc(doc(db, USERS_COL, cleanUsername));
     
-    // Se o usuário não existir no Firebase, verifica se o banco está totalmente vazio e tenta migrar automaticamente do Sheets
+    // Se o usuário não existir no Firebase, tenta auto-migração do Google Sheets
     if (!userDoc.exists()) {
-      const allUsersSnap = await getDocs(collection(db, USERS_COL));
-      if (allUsersSnap.empty) {
-        console.log("Banco Firebase vazio. Executando auto-migração inicial do Google Sheets...");
-        await backupAndMigrateFromSheets();
-        userDoc = await getDoc(doc(db, USERS_COL, cleanUsername));
-      }
+      console.log("Usuário não encontrado no Firebase. Buscando e migrando dados do Google Sheets...");
+      await backupAndMigrateFromSheets();
+      userDoc = await getDoc(doc(db, USERS_COL, cleanUsername));
     }
     
     if (userDoc.exists()) {
@@ -169,6 +166,37 @@ export const loginUser = async (username: string, password: string): Promise<{ s
       }
     }
 
+    // Fallback: Tenta validar diretamente na API do Google Sheets e migra o usuário
+    try {
+      const API_URL = "https://script.google.com/macros/s/AKfycbwNITKLC-gmCe4mSxgjQCRmH20pPkChwiSPqlOR-OFV2O4jqblxCLcEAwNoe4jt9q5Byw/exec";
+      const response = await fetch(API_URL, {
+        method: "POST",
+        redirect: "follow",
+        body: JSON.stringify({ action: 'login', username: cleanUsername, password }),
+      });
+      const result = await response.json();
+      if (result.status === 'success' && result.user) {
+        // Salva e migra este usuário para o Firebase
+        await setDoc(doc(db, USERS_COL, cleanUsername), {
+          username: cleanUsername,
+          password: password,
+          name: result.user.name || cleanUsername,
+          role: result.user.role || 'montador'
+        }, { merge: true });
+
+        return {
+          success: true,
+          user: {
+            username: cleanUsername,
+            name: result.user.name || cleanUsername,
+            role: result.user.role || 'montador'
+          }
+        };
+      }
+    } catch (sheetsErr) {
+      console.warn("Fallback de login no Google Sheets falhou:", sheetsErr);
+    }
+
     // Se o banco de dados estiver vazio, fallback inicial com admin padrão
     if (cleanUsername === 'admin' && password === '123') {
       const defaultAdmin: User = { username: 'admin', name: 'Administrador', role: 'gestor' };
@@ -176,7 +204,7 @@ export const loginUser = async (username: string, password: string): Promise<{ s
       return { success: true, user: defaultAdmin };
     }
 
-    return { success: false, message: 'Usuário não encontrado no Firebase' };
+    return { success: false, message: 'Usuário não encontrado' };
   } catch (e: any) {
     console.error("Erro no login Firebase:", e);
     return { success: false, message: 'Erro ao conectar com Firebase' };
